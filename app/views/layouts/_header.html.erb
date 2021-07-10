@@ -1,23 +1,22 @@
 <header>
   <div class="header-body">
     <div class="logo">
-      <a href=#>Any boards</a>
+      <a><%= link_to "Any boards", root_path %></a>
     </div>
     <nav>
-     <!--
+     <% if user_signed_in? %>
       <ul>
         <li class="header_list"><a href=#>my page</a></li>
         <li class="header_list"><a href=#>boards</a></li>
         <li class="header_list"><a href=#>search</a></li>
-        <li class="header_list"><a href=#>log out</a></li>
+        <li class="header_list"><a><%= link_to "log out", destroy_user_session_path, method: :delete %></a></li>
       </ul>
-      -->
+    <% else %>
       <ul>
-        <li class="header_list"><a href=#>boards</a></li>
         <li class="header_list"><a href=#>log in</a></li>
-        <li class="header_list"><a href=#>sign up</a></li>
+        <li class="header_list"><a><%= link_to "sign up", new_user_registration_path %></a></li>
       </ul>
-
+    <% end %>
     </nav>
   </div>
 </header>
