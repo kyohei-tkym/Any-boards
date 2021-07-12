@@ -9,7 +9,7 @@
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true %>
+    <%= f.select :gender, {'男性': 1, '女性': 2}, autofocus: true %>
   </div>
 
   <div class="field">
