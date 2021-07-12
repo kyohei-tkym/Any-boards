@@ -7,7 +7,7 @@
      <% if user_signed_in? %>
       <ul>
         <li class="header_list"><a><%= link_to 'my page', user_path(current_user.id) %></a></li>
-        <li class="header_list"><a href=#>boards</a></li>
+        <li class="header_list"><a><%= link_to 'boards', posts_path %></a></li>
         <li class="header_list"><a href=#>search</a></li>
         <li class="header_list"><a><%= link_to "log out", destroy_user_session_path, method: :delete %></a></li>
       </ul>

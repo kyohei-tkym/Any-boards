@@ -1,0 +1,17 @@
+<%= render 'post-form', post: @post %>
+
+<div>
+  <h3><%= @post.user.name %>'s　<%= @post.title %></h3>
+  <p>ユーザーネーム：<%= @post.user.name %></p>
+  <p>ボードの名前：<%= @post.title %></p>
+  <p>ボードの説明：<%= @post.body %></p>
+  <p>ジャンル：<%= @post.genre %></p>
+  <p>サイズ・浮力：<%= @post.size %></p>
+  <p>身長・体重：<%= @post.user.tall_weight %></p>
+  <% if @post.user == current_user %>
+    <p><%= link_to "削除", post_path(@post), method: :delete %></p>
+  <% end %>
+</div>
+<% @post.post_images.each do |post_image| %>
+　<%= attachment_image_tag post_image, :image, size: "130x130" %>
+<% end %>
