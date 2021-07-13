@@ -1,0 +1,13 @@
+<%= form_with model: post, local: true do |f| %>
+　<%= f.label :"ボードの名前"%>
+　<%= f.text_field :title %>
+　<%= f.label :"ボードの説明"%>
+　<%= f.text_area :body %>
+　<%= f.label :"ボードのサイズ・浮力"%>
+　<%= f.text_field :size %>
+　<%= f.label :"ボードの画像"%>
+　<%= f.attachment_field :post_images_images, multiple: true %>
+　<%= f.label :"ジャンル"%>
+　<%= f.select :genre, [["ショートボード"],["ミッドレングス"],["ロングボード"],["ソフトボード"],["その他"]] %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,12 @@
+<% posts.each do |post| %>
+  <div>
+    <p>ボードの名前：<%= post.title %></p>
+    <p>ユーザーネーム：<%= post.user.name %></p>
+    <p>ジャンル：<%= post.genre %></p>
+  </div>
+  <%= link_to post_path(post.id) do %>
+    <% post.post_images.first(1).each do |post_image| %>
+  　　<%= attachment_image_tag post_image, :image, size: "130x130" %>
+  　<% end %>
+  <%end %>
+<% end %>
