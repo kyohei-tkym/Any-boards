@@ -4,7 +4,7 @@
   <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
   <label for="inputTallWeight">身長・体重</label>
   <%= f.text_field :tall_weight, autofocus: true, id:"inputTallWeight", placeholder:"○○○cm/○○kg"%>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "img/no_image.jpg"%>
   <label for="inputImage">ProfileImage</label>
   <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
   <label for="inputIntroduction">自己紹介</label>
