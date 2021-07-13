@@ -1,7 +1,7 @@
 <a><%= link_to "プロフィール編集", edit_user_path(@user) %></a>
 <div class="profile-container">
   <h1>プロフィール</h1>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "img/no_image.jpg"%>
   <h3 class="profile-name"><%= @user.name %></h3>
   <p><%= @user.gender %></p>
   <p><%= @user.tall_weight %></p>
