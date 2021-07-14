@@ -56,7 +56,7 @@ footer{
 
 /*トップページ*/
 .top-main{
-  background-image: image-url('img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg');
+  background-image: image-url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
   height: 100vh;
   max-width: 100%;
   background-size: cover;
