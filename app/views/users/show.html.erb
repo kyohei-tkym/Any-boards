@@ -6,6 +6,7 @@
   <p><%= @user.gender %></p>
   <p><%= @user.tall_weight %></p>
   <P><%= @user.introduction %></P>
+  <p><%= link_to "NICE一覧", favorites_users_path(@user.id) %></p>
 </div>
 
 <%= render 'posts/post-index', posts: @posts %>
