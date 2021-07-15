@@ -6,6 +6,11 @@
   <p>ボードの名前：<%= @post.title %></p>
   <p>ボードの説明：<%= @post.body %></p>
   <p>ジャンル：<%= @post.genre %></p>
+  <p>ブランド：
+    <% @post.tags.each do |tag| %>
+      <%= tag.tag_name %>
+    <% end %>
+  </p>
   <p>サイズ・浮力：<%= @post.size %></p>
   <p>身長・体重：<%= @post.user.tall_weight %></p>
   <% if @post.user == current_user %>

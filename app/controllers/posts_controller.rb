@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
   end
 
   def show
@@ -31,6 +32,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :genre, :size, post_images_images: [])
+    params.require(:post).permit(:title, :body, :genre, :size, post_images_images: [], tag_ids: [])
   end
 end
