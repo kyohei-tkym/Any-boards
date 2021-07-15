@@ -1,4 +1,5 @@
-<% posts.each do |post| %>
+<h2>NICE!一覧</h2>
+<% current_user.favorite_posts.each do |post| %>
   <div>
     <p>ボードの名前：<%= post.title %></p>
     <p>ユーザーネーム：<%= post.user.name %></p>
@@ -6,13 +7,13 @@
   <% if post.favorited_by?(current_user) %>
     <p>
       <%= link_to post_favorites_path(post), method: :delete do %>
-        NICE!(<%= post.favorites.count %>) 
+        NICE!(<%= post.favorites.count %>)
       <% end %>
     </p>
     <% else %>
     <p>
       <%= link_to post_favorites_path(post), method: :post do %>
-        NICE!(<%= post.favorites.count %>) 
+        NICE!(<%= post.favorites.count %>)
       <% end %>
     </p>
   <% end %>
