@@ -1,6 +1,7 @@
 <%= render 'post-form', post: @post %>
 
 <%= render 'post-index', posts: @posts %>
+
 <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
   <%= select_tag :tag_id,
                  options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
