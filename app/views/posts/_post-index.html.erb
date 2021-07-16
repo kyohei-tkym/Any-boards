@@ -3,23 +3,24 @@
     <p>ボードの名前：<%= post.title %></p>
     <p>ユーザーネーム：<%= post.user.name %></p>
     <p>ジャンル：<%= post.genre %></p>
-  <% if post.favorited_by?(current_user) %>
+    <p>コメント件数：<%= post.post_comments.count %></p>
+    <% if post.favorited_by?(current_user) %>
     <p>
       <%= link_to post_favorites_path(post), method: :delete do %>
-        NICE!(<%= post.favorites.count %>) 
+        NICE!(<%= post.favorites.count %>)
       <% end %>
     </p>
     <% else %>
     <p>
       <%= link_to post_favorites_path(post), method: :post do %>
-        NICE!(<%= post.favorites.count %>) 
+        NICE!(<%= post.favorites.count %>)
       <% end %>
     </p>
-  <% end %>
+    <% end %>
   </div>
   <%= link_to post_path(post.id) do %>
     <% post.post_images.first(1).each do |post_image| %>
   　　<%= attachment_image_tag post_image, :image, size: "130x130" %>
   　<% end %>
-  <%end %>
+  <% end %>
 <% end %>
