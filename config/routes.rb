@@ -6,8 +6,8 @@ Rails.application.routes.draw do
       get :favorites
     end
   end
-  
- 
+
+
   resources :posts,only: [:create, :index, :show, :update, :destroy] do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
