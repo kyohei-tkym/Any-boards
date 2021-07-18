@@ -14,4 +14,5 @@ class SearchController < ApplicationController
       Post.where("title LIKE ?", "%#{value}%")
     end
   end
+
 end
