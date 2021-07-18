@@ -48,6 +48,31 @@
             </tr>
         </tbody>
         <% end %>
+    <% else %>
+    <h2>Posts search for '<%= @value %>'</h2>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>board name</th>
+                <th>genre</th>
+            </tr>
+        </thead>
+        <% @datas.each do |post| %>
+        <tbody>
+            <tr>
+                <th>
+                    <%= attachment_image_tag(post.user, :profile_image, :fill, 40, 40, fallback: "img/no_image.jpg", size:'40x40') %>
+                </th>
+                <th>
+                    <%= post.title %>
+                </th>
+                <th>
+                    <%= post.genre %>
+                </th>
+            </tr>
+        </tbody>
+        <% end %>
     <% end %>
     </table>
   </div>
