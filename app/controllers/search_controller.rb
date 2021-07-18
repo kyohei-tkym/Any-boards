@@ -12,6 +12,8 @@ class SearchController < ApplicationController
       User.where("name LIKE ?", "%#{value}%")
     elsif model == 'post'
       Post.where("title LIKE ?", "%#{value}%")
+    else
+      Post.where(genre: value)
     end
   end
 
