@@ -2,19 +2,9 @@
 
 <div>
   <h3><%= @post.user.name %>'s　<%= @post.title %></h3>
-  <% if @post.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_favorites_path(@post), method: :delete do %>
-        NICE!(<%= @post.favorites.count %>)
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_favorites_path(@post), method: :post do %>
-        NICE!(<%= @post.favorites.count %>)
-      <% end %>
-    </p>
-  <% end %>
+  <div id="post-favorite_<%= @post.id %>">
+    <%= render 'posts/post-favorite', post: @post %>
+  </div>
   <p>ユーザーネーム：<%= @post.user.name %></p>
   <p>ボードの名前：<%= @post.title %></p>
   <p>ボードの説明：<%= @post.body %></p>
