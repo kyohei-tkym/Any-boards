@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -19,57 +20,60 @@ header {
   justify-content: center;
   width: 100%;
   height: 50px;
-  font-size: 16px;
-}
+  font-size: 16px; }
 
-.header-body{
+.header-body {
   width: 1024px;
   display: flex;
-  align-items: center;
-}
+  align-items: center; }
 
-nav{
-  margin-left: auto;
-}
+nav {
+  margin-left: auto; }
 
-a{
+a {
   text-decoration: none;
-  color: #707070;
-}
+  color: #707070; }
 
-.header_list{
+.header_list {
   display: inline-block;
   margin: 0 30px;
-  list-style: none;
-}
+  list-style: none; }
 
 /*フッター*/
-footer{
+footer {
   width: 100%;
   height: 35px;
   background-color: #FFF;
   color: #707070;
   font-size: 16px;
   text-align: center;
-  line-height: 35px;
-}
+  line-height: 35px; }
 
 /*トップページ*/
-.top-main{
-  background-image: url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
+.image1 {
+  background-image: url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg"); }
+
+.image2 {
+  background-image: url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg"); }
+
+.image3 {
+  background-image: url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg"); }
+
+#container {
   height: 100vh;
   max-width: 100%;
   background-size: cover;
-  background-position: center;
-}
+  background-position: center; }
 
-.top-comment{
+.top-comment {
   text-align: center;
-  padding-top: 200px;
-  color: #555555;
-}
+  line-height: 30px;
+  padding-top: 150px;
+  color: #555555; }
+
 /*新規登録ボタン*/
-.btn{
+.btn {
+  margin-top: 40px;
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -77,39 +81,51 @@ footer{
   border: 1px solid #555;
   border-radius: 25px;
   padding: 10px 30px;
-  background:#FFF;
+  background: #FFF;
   text-align: center;
   outline: none;
   /*アニメーション*/
-  transition: ease .2s;
-}
+  transition: ease .2s; }
 
-.btn span{
+.btn span {
   position: relative;
   z-index: 3;
-  color: #333;
-}
+  color: #333; }
 
-.btn:hover .sign_btn{
-  color: #fff;
-}
+.btn:hover .sign_btn {
+  color: #fff; }
 
-.bgleft:before{
+.bgleft:before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
-  background:#333;
+  background: #333;
   width: 100%;
   height: 100%;
   /*アニメーション*/
-  transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
   transform: scale(0, 1);
-  transform-origin: right top;
-}
+  transform-origin: right top; }
 
-.bgleft:hover:before{
-  transform-origin:left top;
-  transform:scale(1, 1);
-}
+.bgleft:hover:before {
+  transform-origin: left top;
+  transform: scale(1, 1); }
+
+/*全て共通：hideエリアをはじめは非表示*/
+.hide-area {
+  display: none; }
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after,
+.modaal-close:before {
+  background: #ccc; }
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before {
+  background: #666; }
+
+/*# sourceMappingURL=application.css.map */

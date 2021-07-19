@@ -56,8 +56,18 @@ footer{
 }
 
 /*トップページ*/
-.top-main{
-  background-image: image-url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
+
+.image1 {
+  background-image: url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
+}
+.image2 {
+  background-image: url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
+}
+.image3 {
+  background-image: url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg");
+}
+
+#container {
   height: 100vh;
   max-width: 100%;
   background-size: cover;
@@ -66,11 +76,14 @@ footer{
 
 .top-comment{
   text-align: center;
-  padding-top: 200px;
+  line-height: 30px;
+  padding-top: 150px;
   color: #555555;
 }
+
 /*新規登録ボタン*/
 .btn{
+  margin-top: 40px;
   position: relative;
   overflow: hidden;
   text-decoration: none;
