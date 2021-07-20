@@ -11,11 +11,13 @@
 // about supported directives.
 //
 //= require jquery
-
+//= require jquery_ujs
+//
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
 
 
 
@@ -45,4 +47,3 @@ $(document).ready(function () {
     pauseOnHover: false,//マウスホバーで一時停止を無効
   });
 });
-

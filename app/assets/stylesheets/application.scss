@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 /*ヘッダー*/
 header {
   display: flex;
@@ -24,13 +25,17 @@ header {
 }
 
 .header-body{
-  width: 1024px;
+  width: 100%;
   display: flex;
   align-items: center;
 }
 
 nav{
   margin-left: auto;
+}
+
+.logo{
+  margin-left: 30px;
 }
 
 a{
@@ -44,6 +49,7 @@ a{
   list-style: none;
 }
 
+
 /*フッター*/
 footer{
   width: 100%;
@@ -55,16 +61,29 @@ footer{
   line-height: 35px;
 }
 
+
+// 共通
+main{
+  background-color: rgba( 0, 0, 0, 0.1);
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+
 /*トップページ*/
 
 .image1 {
-  background-image: url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
+  background-image: image-url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
 }
 .image2 {
-  background-image: url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
+  background-image: image-url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
 }
 .image3 {
-  background-image: url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg");
+  background-image: image-url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg");
 }
 
 #container {
@@ -126,4 +145,203 @@ footer{
 .bgleft:hover:before{
   transform-origin:left top;
   transform:scale(1, 1);
+}
+
+/*my pageレイアウト*/
+
+/*my page編集ボタン*/
+.btn-show{
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #555;
+  border-radius: 25px;
+  padding: 3px 8px;
+  background:#FFF;
+  text-align: center;
+  outline: none;
+  /*アニメーション*/
+  transition: ease .2s;
+}
+
+.btn-show span{
+  position: relative;
+  z-index: 3;
+  color: #333;
+}
+
+.btn-show:hover .sign_btn{
+  color: #fff;
+}
+
+.bgcentery:before {
+  content: '';
+    /*絶対配置で位置を指定*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+    /*色や形状*/
+  background: #333;
+  width: 100%;
+  height: 100%;
+    /*アニメーション*/
+  transition: transform .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(1, 0);
+  transform-origin:center;
+}
+
+/*hoverした際の形状*/
+.bgcentery:hover:before{
+  transform:scale(1, 1);
+}
+
+.profile-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: image-url("img/horizon-2602227_1920.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+
+.profile-contents{
+  display: flex;
+  width: 900px;
+  padding: 20px;
+  background-color: rgba( 255, 255, 255, 0.5)
+}
+
+.profile-icon{
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
+.profile-image{
+  border-radius: 50%;
+}
+
+.profile-details{
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+.profile-link{
+  margin-top: 105px;
+  margin-left: 60px;
+}
+
+
+ /*投稿一覧*/
+
+.index-cantainer{
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px 20px;
+  background-color: #FFF;
+}
+
+
+// お気に入り一覧
+.favorite-title{
+  text-align: center;
+  padding-top: 60px;
+}
+
+// 投稿詳細
+
+.show-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.show-title{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.show-nice{
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.show-images{
+  display: flex;
+  flex-direction: column;
+}
+
+.show-text{
+  width: 400px;
+  margin-left: 80px;
+}
+
+.show-details{
+  line-height: 20px;
+}
+
+.bold{
+  width: 280px;
+  font-weight: bold;
+  border-bottom: solid 1px #000;
+}
+
+.destroy{
+  color: red;
+}
+
+// コメント機能
+
+.comment{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.comment-title{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.comment-count{
+  margin-left: 10px;
+  margin-top: 27px;
+  font-size: 20px;
+}
+
+.comment-contents{
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-index{
+  display: flex;
+  justify-content: center;
+}
+
+.comment-details{
+  margin: 30px;
+}
+
+.comment-new{
+  display: flex;
+  justify-content: center;
+}
+
+.comment-form{
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.comment-submit{
+  width: 80px;
 }

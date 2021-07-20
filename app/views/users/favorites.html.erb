@@ -1,26 +1,24 @@
-<h2>NICE!一覧</h2>
-<% current_user.favorite_posts.each do |post| %>
-  <div>
-    <p>ボードの名前：<%= post.title %></p>
-    <p>ユーザーネーム：<%= post.user.name %></p>
-    <p>ジャンル：<%= post.genre %></p>
-  <% if post.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_favorites_path(post), method: :delete do %>
-        NICE!(<%= post.favorites.count %>)
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_favorites_path(post), method: :post do %>
-        NICE!(<%= post.favorites.count %>)
-      <% end %>
-    </p>
+<div class="container">
+  <h2 class="favorite-title">NICE!一覧</h2>
+  <% current_user.favorite_posts.each do |post| %>
+    <div class="index-cantainer">
+      <div class="index-image">
+        <%= link_to post_path(post.id) do %>
+          <% post.post_images.first(1).each do |post_image| %>
+        　　<%= attachment_image_tag post_image, :image, size: "300x300" %>
+        　<% end %>
+        <% end %>
+      </div>
+
+      <div class="index-details">
+        <p>ボードの名前：<%= post.title %></p>
+        <p>ユーザーネーム：<%= link_to post.user.name, user_path(post.user_id), class:"index-user" %></p>
+        <p>ジャンル：<%= post.genre %></p>
+        <p>コメント件数：<%= post.post_comments.count %></p>
+        <div id="post-favorite_<%= post.id %>">
+          <%= render 'posts/post-favorite', post: post %>
+        </div>
+      </div>
+      </div>
   <% end %>
-  </div>
-  <%= link_to post_path(post.id) do %>
-    <% post.post_images.first(1).each do |post_image| %>
-  　　<%= attachment_image_tag post_image, :image, size: "130x130" %>
-  　<% end %>
-  <%end %>
-<% end %>
+</div>
