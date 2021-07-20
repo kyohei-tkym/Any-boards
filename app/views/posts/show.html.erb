@@ -1,45 +1,67 @@
-<%= render 'post-form', post: @post %>
-
-<div>
-  <h3><%= @post.user.name %>'s　<%= @post.title %></h3>
-  <div id="post-favorite_<%= @post.id %>">
-    <%= render 'posts/post-favorite', post: @post %>
+<div class="container">
+  <%= render 'post-form', post: @post %>
+  <div class="show-title">
+    <h2><%= @post.user.name %>'s　<%= @post.title %></h2>
+    <div class="show-nice" id="post-favorite_<%= @post.id %>">
+      <%= render 'posts/post-favorite', post: @post %>
+    </div>
   </div>
-  <p>ユーザーネーム：<%= @post.user.name %></p>
-  <p>ボードの名前：<%= @post.title %></p>
-  <p>ボードの説明：<%= @post.body %></p>
-  <p>ジャンル：<%= @post.genre %></p>
-  <p>ブランド：
-    <% @post.tags.each do |tag| %>
-      <%= tag.tag_name %>
+  <div class="show-container">
+    <div class="show-images">
+      <% @post.post_images.each do |post_image| %>
+      　<%= attachment_image_tag post_image, :image, size: "400x400" %>
+      <% end %>
+    </div>
+    <div class="show-text">
+      <div class="show-details">
+        <p>ボードの名前</p>
+        <p class="bold"><%= @post.title %></p>
+        <p>ジャンル</p>
+        <p class="bold"><%= @post.genre %></p>
+        <p>ブランド</p>
+          <% @post.tags.each do |tag| %>
+            <p class="bold"><%= tag.tag_name %></p>
+          <% end %>
+        <p>サイズ・浮力</p>
+        <p class="bold"><%= @post.size %></p>
+        <p>身長・体重</p>
+        <p class="bold"><%= @post.user.tall_weight %></p>
+        <p>ユーザーネーム</p>
+        <p class="bold"><%= @post.user.name %></p>
+        <p>ボードの説明</p>
+        <p class="bold"><%= @post.body %></p>
+         <% if @post.user == current_user %>
+          <p><%= link_to "削除する", post_path(@post), method: :delete, class:"destroy" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <div class="comment-title">
+      <h2>コメント</h2>
+      <p class="comment-count">(<%= @post.post_comments.count %>)</p>
+    </div>
+    <div class="comment-contents">
+      <% @post.post_comments.each do |post_comment| %>
+      <div class="comment-index">
+        <p class="comment-icon"><%= attachment_image_tag post_comment.user, :profile_image, :fill, 40, 40, fallback: "img/no_image.jpg", class:"profile-image"%></p>
+        <p class="comment-details"><%= post_comment.user.name %></p>
+        <p class="comment-details"><%= post_comment.created_at.strftime('%Y/%m/%d') %></p>
+        <p class="comment-details"><%= post_comment.comment %></p>
+        <div class="comment-details">
+          <% if post_comment.user == current_user %>
+            <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="comment-new">
+    <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
+      <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", class:"comment-form" %>
+      <%= f.submit "送信する", class:"comment-submit" %>
     <% end %>
-  </p>
-  <p>サイズ・浮力：<%= @post.size %></p>
-  <p>身長・体重：<%= @post.user.tall_weight %></p>
-  <% if @post.user == current_user %>
-    <p><%= link_to "削除", post_path(@post), method: :delete %></p>
-  <% end %>
-</div>
-<% @post.post_images.each do |post_image| %>
-　<%= attachment_image_tag post_image, :image, size: "130x130" %>
-<% end %>
-
-<div class="comments">
-<p>コメント件数：<%= @post.post_comments.count %></p>
-<% @post.post_comments.each do |post_comment| %>
-  <p><%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "img/no_image.jpg"%></p>
-  <%= post_comment.user.name %>
-  <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-  <% if post_comment.user == current_user %>
-  <div class="comment-delete">
-    <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
   </div>
-  <% end %>
-<% end %>
-</div>
-<div class="new-comment">
-<%= form_with(model:[@post, @post_comment], local: true) do |f| %>
-  <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
-  <%= f.submit "送信する" %>
-<% end %>
 </div>
