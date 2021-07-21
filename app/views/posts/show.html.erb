@@ -27,7 +27,7 @@
         <p>身長・体重</p>
         <p class="bold"><%= @post.user.tall_weight %></p>
         <p>ユーザーネーム</p>
-        <p class="bold"><%= @post.user.name %></p>
+        <p class="bold"><%= link_to @post.user.name, user_path(@post.user_id) %></p>
         <p>ボードの説明</p>
         <p class="bold"><%= @post.body %></p>
          <% if @post.user == current_user %>

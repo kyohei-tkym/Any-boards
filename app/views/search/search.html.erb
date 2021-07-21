@@ -1,79 +1,33 @@
-  <% if @model == "user" %>
-    <h2>Users search for '<%= @value %>'</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Introduction</th>
-            </tr>
-        </thead>
-    <% @datas.each do |user| %>
-        <tbody>
-            <tr>
-                <th>
-                    <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "img/no_image.jpg", size:'40x40') %>
-                </th>
-                <th>
-                    <%= user.name %>
-                </th>
-                <th>
-                    <%= user.introduction %>
-                </th>
-            </tr>
-        </tbody>
-    <% end %>
-  <% elsif @model == "post" %>
-    <h2>Posts search for '<%= @value %>'</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>board name</th>
-                <th>genre</th>
-            </tr>
-        </thead>
-        <% @datas.each do |post| %>
-        <tbody>
-            <tr>
-                <th>
-                    <%= attachment_image_tag(post.user, :profile_image, :fill, 40, 40, fallback: "img/no_image.jpg", size:'40x40') %>
-                </th>
-                <th>
-                    <%= post.title %>
-                </th>
-                <th>
-                    <%= post.genre %>
-                </th>
-            </tr>
-        </tbody>
-        <% end %>
-    <% else %>
-    <h2>Posts search for '<%= @value %>'</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>board name</th>
-                <th>genre</th>
-            </tr>
-        </thead>
-        <% @datas.each do |post| %>
-        <tbody>
-            <tr>
-                <th>
-                    <%= attachment_image_tag(post.user, :profile_image, :fill, 40, 40, fallback: "img/no_image.jpg", size:'40x40') %>
-                </th>
-                <th>
-                    <%= post.title %>
-                </th>
-                <th>
-                    <%= post.genre %>
-                </th>
-            </tr>
-        </tbody>
-        <% end %>
-    <% end %>
+<% if @model == "user" %>
+<div class="container">
+    <div class="search-user-container">
+        <div class="search-user-card">
+            <h2 class="search-user-title">Users search for '<%= @value %>'</h2>
+
+            <% @datas.each do |user| %>
+            <div class="search-user-contents">
+                <div class="search-user-icon">
+                    <%= attachment_image_tag user, :profile_image, :fill, 150, 150, fallback: "img/no_image.jpg", class:"profile-image" %>
+                </div>
+                <div class="search-user-details">
+                    <h3><%= link_to user.name, user_path(user), class:"index-user" %></h3>
+                    <p>性別：<%= user.gender %></p>
+                    <p>身長・体重：<%= user.tall_weight %></p>
+                    <P>自己紹介<br/><%= user.introduction %></P>
+                </div>
+            </div>
+            <% end %>
+
+        </div>
+    </div>
+</div>
+<% elsif @model == "post" %>
+    <h2 class="search-user-title">Search for '<%= @value %>'</h2>
+    <%= render 'posts/post-index', posts: @datas %>
+<% else %>
+    <h2 class="search-user-title">Search for '<%= @value %>'</h2>
+    <%= render 'posts/post-index', posts: @datas %>
+<% end %>
     </table>
   </div>
 </div>

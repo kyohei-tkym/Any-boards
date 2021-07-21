@@ -40,7 +40,7 @@ nav{
 
 a{
   text-decoration: none;
-  color: #707070;
+  color: #666666;
 }
 
 .header_list{
@@ -217,7 +217,6 @@ main{
 }
 
 .profile-icon{
-  margin-top: 70px;
   margin-left: 40px;
 }
 
@@ -226,12 +225,11 @@ main{
 }
 
 .profile-details{
-  margin-top: 60px;
   margin-left: 60px;
 }
 
 .profile-link{
-  margin-top: 105px;
+  margin-top: 45px;
   margin-left: 60px;
 }
 
@@ -344,4 +342,108 @@ main{
 
 .comment-submit{
   width: 80px;
+}
+
+// プロフィール編集機能
+
+.edit-profile-container{
+  display: flex;
+  justify-content: center;
+}
+
+.edit-profile-title{
+  text-align: center;
+  padding-top: 60px;
+}
+
+.edit-profile-detail{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  width: 400px;
+}
+
+.edit-label{
+
+}
+
+.edit-profile-image{
+ height: 400px;
+}
+
+.edit-input{
+  height: 30px;
+  border-radius: 5px;
+}
+
+.edit-input-introduction{
+  height: 80px;
+  border-radius: 5px;
+}
+
+// 検索結果画面
+.search-user-container{
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.search-user-title{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.search-user-contents{
+  display: flex;
+  margin-bottom: 40px;
+  background-color: #FFF;
+  padding: 20px 20px;
+}
+
+.search-user-icon{
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+// 検索フォーム
+.search-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: image-url("img/jeremy-bishop-bUfLNUZ2QH8-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.search-contents{
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  padding: 20px;
+  background-color: rgba( 255, 255, 255, 0.7)
+}
+
+.brand-search{
+  text-align: center;
+}
+
+.keyword-search{
+  text-align: center;
+  margin-left: 30px;
+}
+
+.genre-search{
+  text-align: center;
+  margin-left: 30px;
+}
+
+.search-form{
+  width: 150px;
+}
+
+.search-title{
+  text-align: center;
 }
