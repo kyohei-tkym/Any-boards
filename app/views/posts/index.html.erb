@@ -1,30 +1,35 @@
-
+<div class="search-container">
+  <div class="search-contents">
+    <div class="brand-search">
+      <p>ブランドで検索</p>
+      <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
+        <%= select_tag :tag_id,options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
+          { prompt: 'ブランドで絞り込む',onchange: 'submit(this.form);'}
+        %>
+      <% end %>
+    </div>
+    <div class="keyword-search">
+    <p>キーワードで検索</p>
+    <% if user_signed_in? %>
+      <%= form_with url:search_path, method: :get, local: true do |f| %>
+        <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }), class:"search-form" %>
+        <%= f.text_field 'search[value]', class:"search-form" %>
+        <%= f.submit :"検索", class:"search-submit" %>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="genre-search">
+      <p>ボードの種類で検索</p>
+    <% if user_signed_in? %>
+      <%= form_with url:search_path, method: :get, local: true do |f| %>
+        <%= f.select 'search[value]', [["ショートボード"],["ミッドレングス"],["ロングボード"],["ソフトボード"],["その他"]], class:"search-form" %>
+        <%= f.submit :"検索", class:"search-submit" %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'post-index', posts: @posts %>
 <%= render 'post-form', post: @post %>
 
-<%= render 'post-index', posts: @posts %>
 
-<%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
-  <%= select_tag :tag_id,
-                 options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
-                 {
-                   prompt: 'ブランドで絞り込み検索',
-                   onchange: 'submit(this.form);'
-                 }
-  %>
-<% end %>
-
-
-<% if user_signed_in? %>
-  <%= form_with url:search_path, method: :get, local: true do |f| %>
-    <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
-    <%= f.text_field 'search[value]' %>
-    <%= f.submit :"検索" %>
-  <% end %>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= form_with url:search_path, method: :get, local: true do |f| %>
-    <%= f.select 'search[value]', [["ショートボード"],["ミッドレングス"],["ロングボード"],["ソフトボード"],["その他"]] %>
-    <%= f.submit :"検索" %>
-  <% end %>
-<% end %>
