@@ -1,12 +1,12 @@
 <% if post.favorited_by?(current_user) %>
 <p>
-  <%= link_to post_favorites_path(post), method: :delete,remote: true do %>
+  <%= link_to post_favorites_path(post), method: :delete, remote: true do %>
     <div class="btn-show bgcentery"><span class="sign_btn">NICE!<%= post.favorites.count %></span></div>
   <% end %>
 </p>
 <% else %>
 <p>
-  <%= link_to post_favorites_path(post), method: :post,remote: true do %>
+  <%= link_to post_favorites_path(post), method: :post, remote: true do %>
     <div class="btn-show bgcentery"><span class="sign_btn">NICE!<%= post.favorites.count %></span></div></br>
   <% end %>
 </p>
