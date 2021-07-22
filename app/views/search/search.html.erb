@@ -3,21 +3,7 @@
     <div class="search-user-container">
         <div class="search-user-card">
             <h2 class="search-user-title">Users search for '<%= @value %>'</h2>
-
-            <% @datas.each do |user| %>
-            <div class="search-user-contents">
-                <div class="search-user-icon">
-                    <%= attachment_image_tag user, :profile_image, :fill, 150, 150, fallback: "img/no_image.jpg", class:"profile-image" %>
-                </div>
-                <div class="search-user-details">
-                    <h3><%= link_to user.name, user_path(user), class:"index-user" %></h3>
-                    <p>性別：<%= user.gender %></p>
-                    <p>身長・体重：<%= user.tall_weight %></p>
-                    <P>自己紹介<br/><%= user.introduction %></P>
-                </div>
-            </div>
-            <% end %>
-
+            <%= render 'relationships/users', users: @datas %>
         </div>
     </div>
 </div>

@@ -447,3 +447,59 @@ main{
 .search-title{
   text-align: center;
 }
+
+.signup-container{
+  display: flex;
+  margin-left: 250px;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.signup-input{
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.signup-introduction{
+  width: 300px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.form-control{
+  display: inline-block;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px 38px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #555;
+}
+
+.form-image{
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px 30px;
+  background-color: #FFF;
+}
+
+.signup-image{
+  width: 450px;
+  height: 100vh;
+  margin-left: 200px;
+  background-image: image-url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.form-links{
+  display: inline-block;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: #FFF;
+  background-color: #FFF;
+  margin-top: 20px;
+}
