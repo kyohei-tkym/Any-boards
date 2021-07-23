@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).reverse_order
     @post = Post.new
-    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.page(params[:page]).reverse_order
   end
 
   def show

@@ -246,6 +246,14 @@ main{
   background-color: #FFF;
 }
 
+.index-image{
+  margin: 20px;
+  padding-right: 40px;
+}
+
+.index-details{
+  padding-right: 30px;
+}
 
 // お気に入り一覧
 .favorite-title{
@@ -502,4 +510,11 @@ main{
   color: #FFF;
   background-color: #FFF;
   margin-top: 20px;
+}
+
+// ページネーション
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
 }

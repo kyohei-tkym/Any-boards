@@ -9,7 +9,7 @@
   <div class="show-container">
     <div class="show-images">
       <% @post.post_images.each do |post_image| %>
-      　<%= attachment_image_tag post_image, :image, size: "400x400" %>
+      　<%= attachment_image_tag post_image, :image, fill: "400x600" %>
       <% end %>
     </div>
     <div class="show-text">
