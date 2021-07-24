@@ -1,7 +1,7 @@
 <header>
   <div class="header-body">
     <div class="logo">
-      <a><%= link_to "Any boards", root_path %></a>
+      <a><%= link_to "Any boards", root_path, 'data-turbolinks': false %></a>
     </div>
     <nav>
      <% if user_signed_in? %>

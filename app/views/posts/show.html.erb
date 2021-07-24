@@ -1,5 +1,4 @@
 <div class="container">
-  <%= render 'post-form', post: @post %>
   <div class="show-title">
     <h2><%= @post.user.name %>'s　<%= @post.title %></h2>
     <div class="show-nice" id="post-favorite_<%= @post.id %>">
@@ -9,7 +8,7 @@
   <div class="show-container">
     <div class="show-images">
       <% @post.post_images.each do |post_image| %>
-      　<%= attachment_image_tag post_image, :image, size: "400x400" %>
+      　<%= attachment_image_tag post_image, :image, fill: "400x600" %>
       <% end %>
     </div>
     <div class="show-text">
@@ -32,6 +31,9 @@
         <p class="bold"><%= @post.body %></p>
          <% if @post.user == current_user %>
           <p><%= link_to "削除する", post_path(@post), method: :delete, class:"destroy" %></p>
+        <% end %>
+        <% if @post.user == (current_user) %>
+          <div class="btn-show bgcentery"><span><%= link_to "Edit", edit_post_path(@post), class:"sign_btn" %></span></div>
         <% end %>
       </div>
     </div>

@@ -36,6 +36,9 @@
       </div>
     </div>
   </div>
+  <div class="post-btn">
+    <div class="btn-show bgcentery"><span><%= link_to "投稿する", new_post_path, class:"sign_btn" %></span></div>
+  </div>
   <div class="post-index">
     <%= render 'posts/post-index', posts: @posts %>
   </div>

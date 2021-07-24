@@ -11,9 +11,9 @@ class SearchController < ApplicationController
     if model == 'user'
       User.where("name LIKE ?", "%#{value}%")
     elsif model == 'post'
-      Post.where("title LIKE ?", "%#{value}%")
+      Post.where("title LIKE ?", "%#{value}%").page(params[:page]).reverse_order
     else
-      Post.where(genre: value)
+      Post.where(genre: value).page(params[:page]).reverse_order
     end
   end
 

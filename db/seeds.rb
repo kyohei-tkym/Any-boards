@@ -12,5 +12,6 @@ Tag.create([
     { tag_name: 'AGENCY'},
     { tag_name: 'FIREWIRE'},
     { tag_name: 'LOST'},
-    { tag_name: 'PYZEL'}
+    { tag_name: 'PYZEL'},
+    { tag_name: 'Wavestorm'}
     ])

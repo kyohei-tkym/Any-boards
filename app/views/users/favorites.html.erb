@@ -5,7 +5,7 @@
       <div class="index-image">
         <%= link_to post_path(post.id) do %>
           <% post.post_images.first(1).each do |post_image| %>
-        　　<%= attachment_image_tag post_image, :image, size: "300x300" %>
+        　　<%= attachment_image_tag post_image, :image, size: "200x200" %>
         　<% end %>
         <% end %>
       </div>
@@ -19,6 +19,6 @@
           <%= render 'posts/post-favorite', post: post %>
         </div>
       </div>
-      </div>
+    </div>
   <% end %>
 </div>
