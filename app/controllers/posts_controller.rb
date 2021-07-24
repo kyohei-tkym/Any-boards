@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+  def new
+    @post = Post.new
+  end
+  
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
@@ -9,7 +13,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.page(params[:page]).reverse_order
-    @post = Post.new
     @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.page(params[:page]).reverse_order
   end
 
@@ -17,7 +20,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
   end
-
+  
+  def edit
+    @post = Post.find(params[:id])
+  end
+  
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)

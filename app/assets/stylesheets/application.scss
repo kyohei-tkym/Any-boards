@@ -86,7 +86,7 @@ main{
   background-image: image-url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg");
 }
 
-#container {
+#top {
   height: 100vh;
   max-width: 100%;
   background-size: cover;
@@ -147,7 +147,7 @@ main{
   transform:scale(1, 1);
 }
 
-/*my pageレイアウト*/
+// my pageレイアウト
 
 /*my page編集ボタン*/
 .btn-show{
@@ -272,7 +272,7 @@ main{
 .show-title{
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  padding-top: 60px;
 }
 
 .show-nice{
@@ -371,20 +371,17 @@ main{
   width: 400px;
 }
 
-.edit-label{
-
-}
 
 .edit-profile-image{
  height: 400px;
 }
 
-.edit-input{
+.form-input{
   height: 30px;
   border-radius: 5px;
 }
 
-.edit-input-introduction{
+.form-input-introduction{
   height: 80px;
   border-radius: 5px;
 }
@@ -456,6 +453,7 @@ main{
   text-align: center;
 }
 
+// ログイン・サインイン画面
 .signup-container{
   display: flex;
   margin-left: 250px;
@@ -514,6 +512,52 @@ main{
 
 // ページネーション
 .pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+
+// 投稿画面
+.form-container{
+  display: flex;
+  justify-content: center;
+}
+
+.form-detail{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  width: 400px;
+}
+
+.form-brand{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+  width: 400px;
+  height: 200px;
+}
+
+.search-submit{
+  display: inline-block;
+  border: 1px solid #555;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.select-input{
+  height: 35px;
+  border-radius: 5px;
+}
+
+.post-title{
+  text-align: center;
+  padding-top: 60px;
+}
+
+.post-btn{
   display: flex;
   justify-content: center;
   padding-top: 40px;

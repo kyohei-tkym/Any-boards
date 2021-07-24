@@ -43,7 +43,5 @@ $(document).ready(function () {
     keyboardOnAlways : false,
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false,
-    infinite: true,//スライドをループさせるかどうか。
-    pauseOnHover: false,//マウスホバーで一時停止を無効
   });
 });
