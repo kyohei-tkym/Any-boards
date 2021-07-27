@@ -13,7 +13,7 @@
     </div>
     <div class="show-text">
       <div class="show-details">
-        <p>ボードの名前</p>
+        <p>ボードモデル</p>
         <p class="bold"><%= @post.title %></p>
         <p>ジャンル</p>
         <p class="bold"><%= @post.genre %></p>
@@ -25,9 +25,9 @@
         <p class="bold"><%= @post.size %></p>
         <p>身長・体重</p>
         <p class="bold"><%= @post.user.tall_weight %></p>
-        <p>ユーザーネーム</p>
+        <p>ユーザー</p>
         <p class="bold"><%= link_to @post.user.name, user_path(@post.user_id) %></p>
-        <p>ボードの説明</p>
+        <p>詳細</p>
         <p class="bold"><%= @post.body %></p>
          <% if @post.user == current_user %>
           <p><%= link_to "Destroy", post_path(@post), method: :delete, class:"destroy" %></p>
