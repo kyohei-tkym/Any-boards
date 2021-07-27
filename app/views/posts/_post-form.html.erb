@@ -1,13 +1,43 @@
-<%= form_with model: post, local: true do |f| %>
-　<%= f.label :"ボードの名前"%>
-　<%= f.text_field :title %>
-　<%= f.label :"ボードの説明"%>
-　<%= f.text_area :body %>
-　<%= f.label :"ボードのサイズ・浮力"%>
-　<%= f.text_field :size %>
-　<%= f.label :"ボードの画像"%>
-　<%= f.attachment_field :post_images_images, multiple: true %>
-　<%= f.label :"ジャンル"%>
-　<%= f.select :genre, [["ショートボード"],["ミッドレングス"],["ロングボード"],["ソフトボード"],["その他"]] %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="form-container">
+    <div class="post-form">
+      <%= form_with model: post, local: true do |f| %>
+      <div class="form-detail">
+      　<%= f.label :"ボードの名前", class:"form-label" %>
+      　<%= f.text_field :title, class:"form-input" %>
+      </div>
+      <div class="form-detail">
+      　<%= f.label :"ボードの説明", class:"form-label" %>
+      　<%= f.text_area :body, class:"form-input-introduction" %>
+      </div>
+      <div class="form-detail">
+      　<%= f.label :"ボードのサイズ・浮力", class:"form-label" %>
+      　<%= f.text_field :size, class:"form-input" %>
+      </div>
+      <div class="form-detail">
+      　<%= f.label :"ボードの画像", class:"form-label" %>
+      　<%= f.attachment_field :post_images_images, multiple: true, class:"form-image" %>
+      　<p>画像を複数投稿する際は、Shiftキーを押しながらマウスでクリックして選択してください。</p>
+      </div>
+      <div class="form-detail">
+      　<%= f.label :"ジャンル", class:"form-label" %>
+      　<%= f.select :genre, [["ショートボード"],["ミッドレングス"],["ロングボード"],["ソフトボード"],["その他"]], {}, {class: "select-input"} %>
+      </div>
+      <div class="form-detail">
+      　<%= f.label :"ブランド", class:"form-label" %>
+      　<div class="form-brand">
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :tag_name) do |tag| %>
+          <%= tag.label do %>
+            <%= tag.check_box %>
+            <%= tag.text %>｜
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+      <div class="form-detail">
+        <%= f.submit :"POST", class:"form-control"  %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

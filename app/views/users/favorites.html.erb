@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="favorite-title">NICE!一覧</h2>
+  <% current_user.favorite_posts.each do |post| %>
+    <div class="index-cantainer">
+      <div class="index-image">
+        <%= link_to post_path(post.id) do %>
+          <% post.post_images.first(1).each do |post_image| %>
+        　　<%= attachment_image_tag post_image, :image, size: "200x200" %>
+        　<% end %>
+        <% end %>
+      </div>
+
+      <div class="index-details">
+        <p>ボードの名前：<%= post.title %></p>
+        <p>ユーザーネーム：<%= link_to post.user.name, user_path(post.user_id), class:"index-user" %></p>
+        <p>ジャンル：<%= post.genre %></p>
+        <p>コメント件数：<%= post.post_comments.count %></p>
+        <div id="post-favorite_<%= post.id %>">
+          <%= render 'posts/post-favorite', post: post %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

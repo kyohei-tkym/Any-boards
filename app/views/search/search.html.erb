@@ -1,0 +1,19 @@
+<% if @model == "user" %>
+<div class="container">
+    <div class="search-user-container">
+        <div class="search-user-card">
+            <h2 class="search-user-title">Users search for '<%= @value %>'</h2>
+            <%= render 'relationships/users', users: @datas %>
+        </div>
+    </div>
+</div>
+<% elsif @model == "post" %>
+    <h2 class="search-user-title">Search for '<%= @value %>'</h2>
+    <%= render 'posts/post-index', posts: @datas %>
+<% else %>
+    <h2 class="search-user-title">Search for '<%= @value %>'</h2>
+    <%= render 'posts/post-index', posts: @datas %>
+<% end %>
+    </table>
+  </div>
+</div>

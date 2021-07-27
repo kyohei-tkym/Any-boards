@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="search-user-container">
+    <div class="search-user-card">
+    <h2 class="search-user-title">Follower</h2>
+    <% if @users.exists? %>
+      <%= render 'users', users: @users %>
+    <% else %>
+      <p>ユーザーはいません</p>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,13 @@
 <header>
   <div class="header-body">
     <div class="logo">
-      <a><%= link_to "Any boards", root_path %></a>
+      <a><%= link_to "Any boards", root_path, 'data-turbolinks': false %></a>
     </div>
     <nav>
      <% if user_signed_in? %>
       <ul>
         <li class="header_list"><a><%= link_to 'my page', user_path(current_user.id) %></a></li>
         <li class="header_list"><a><%= link_to 'boards', posts_path %></a></li>
-        <li class="header_list"><a href=#>search</a></li>
         <li class="header_list"><a><%= link_to "log out", destroy_user_session_path, method: :delete %></a></li>
       </ul>
     <% else %>

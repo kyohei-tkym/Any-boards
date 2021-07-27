@@ -1,11 +1,45 @@
-<a><%= link_to "プロフィール編集", edit_user_path(@user) %></a>
-<div class="profile-container">
-  <h1>プロフィール</h1>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "img/no_image.jpg"%>
-  <h3 class="profile-name"><%= @user.name %></h3>
-  <p><%= @user.gender %></p>
-  <p><%= @user.tall_weight %></p>
-  <P><%= @user.introduction %></P>
-</div>
+<div class="container">
+  <div class="profile-container">
+    <div class="profile-contents">
+      <div class="profile-title">
+        <h2>Profile</h2>
+        <% if @user == (current_user) %>
+          <div class="btn-show bgcentery"><span><%= link_to "Edit", edit_user_path(@user), class:"sign_btn" %></span></div>
+        <% else %>
+          <% if current_user.following?(@user) %>
+            <div class="btn-show bgcentery"><span><%= link_to "Unfollow", user_relationships_path(@user.id), method: :delete, class:"sign_btn" %></span></div>
+          <% else %>
+            <div class="btn-show bgcentery"><span><%= link_to "Follow", user_relationships_path(@user.id), method: :post, class:"sign_btn" %></span></div>
+          <% end %>
+        <% end %>
+      </div>
 
-<%= render 'posts/post-index', posts: @posts %>
+      <div class="profile-icon">
+        <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "img/no_image.jpg", class:"profile-image" %>
+      </div>
+
+      <div class="profile-details">
+        <h3><%= @user.name %></h3>
+        <p>性別：<%= @user.gender %></p>
+        <p>身長・体重：<%= @user.tall_weight %></p>
+        <P>自己紹介<br/><%= @user.introduction %></P>
+      </div>
+
+      <div class="profile-link">
+        <% if @user == (current_user) %>
+          <p>NICE：<%= link_to "#{@user.favorites.count}", favorites_users_path(@user.id) %></p>
+        <% else %>
+          <p>NICE：<%= @user.favorites.count %>
+        <% end %>
+        <p>Follow：<%= link_to "#{@user.followings.count}", user_followings_path(@user.id) %></p>
+        <p>Follower：<%= link_to "#{@user.followers.count}", user_followers_path(@user.id) %></p>
+      </div>
+    </div>
+  </div>
+  <div class="post-btn">
+    <div class="btn-show bgcentery"><span><%= link_to "投稿する", new_post_path, class:"sign_btn" %></span></div>
+  </div>
+  <div class="post-index">
+    <%= render 'posts/post-index', posts: @posts %>
+  </div>
+</div>
