@@ -34,7 +34,7 @@ nav{
   margin-left: auto;
 }
 
-.logo{
+.header-logo{
   margin-left: 30px;
 }
 
@@ -456,27 +456,31 @@ main{
 // ログイン・サインイン画面
 .signup-container{
   display: flex;
-  margin-left: 250px;
+  flex-direction: column;
   width: 100%;
-  padding-top: 60px;
   padding-bottom: 60px;
 }
 
+.signup-form{
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
 .signup-input{
-  width: 300px;
+  width: 400px;
   height: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 .signup-introduction{
-  width: 300px;
+  width: 400px;
   height: 60px;
   border-radius: 5px;
 }
 
 .form-control{
-  display: inline-block;
+  display: flex;
   border: 1px solid #555;
   border-radius: 5px;
   padding: 10px 38px;
@@ -492,14 +496,25 @@ main{
   background-color: #FFF;
 }
 
-.signup-image{
-  width: 450px;
-  height: 100vh;
-  margin-left: 200px;
-  background-image: image-url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
+.signup-image1{
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  background-image: image-url("img/edoardo-cuoghi-J_BExO7Dvgg-unsplash.jpg");
   background-size: cover;
   background-position: center;
 }
+
+.signup-image2{
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  background-image: image-url("img/sean-benesh-iskzJ8GkIgI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
 .form-links{
   display: inline-block;
   border: 1px solid #555;
@@ -527,7 +542,7 @@ main{
 .form-detail{
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
   width: 400px;
 }
 
@@ -535,7 +550,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 40px;
+  padding-bottom: 20px;
   width: 400px;
   height: 200px;
 }

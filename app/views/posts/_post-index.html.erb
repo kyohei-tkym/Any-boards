@@ -10,8 +10,8 @@
       </div>
 
       <div class="index-details">
-        <p>ボードの名前：<%= post.title %></p>
-        <p>ユーザーネーム：<%= link_to post.user.name, user_path(post.user_id), class:"index-user" %></p>
+        <p>ボードモデル：<%= post.title %></p>
+        <p>ユーザー：<%= link_to post.user.name, user_path(post.user_id), class:"index-user" %></p>
         <p>ジャンル：<%= post.genre %></p>
         <p>コメント件数：<%= post.post_comments.count %></p>
         <div id="post-favorite_<%= post.id %>">
