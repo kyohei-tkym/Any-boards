@@ -283,10 +283,11 @@ main{
 .show-images{
   display: flex;
   flex-direction: column;
+  margin-left: 200px;
 }
 
 .show-text{
-  width: 400px;
+  width: 40%;
   margin-left: 80px;
 }
 
