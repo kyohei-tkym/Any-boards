@@ -28,6 +28,7 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
+  margin: 20px;
 }
 
 nav{
@@ -41,6 +42,7 @@ nav{
 a{
   text-decoration: none;
   color: #666666;
+  font-size: 20px;
 }
 
 .header_list{
@@ -87,7 +89,7 @@ main{
 }
 
 #top {
-  height: 100vh;
+  height: 90vh;
   max-width: 100%;
   background-size: cover;
   background-position: center;
@@ -226,6 +228,11 @@ main{
 
 .profile-details{
   margin-left: 60px;
+}
+
+.user-introduction{
+  margin-top: 20px;
+  width: 200px;
 }
 
 .profile-link{
@@ -469,7 +476,7 @@ main{
 
 .signup-input{
   width: 400px;
-  height: 20px;
+  height: 30px;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -484,6 +491,7 @@ main{
   display: flex;
   border: 1px solid #555;
   border-radius: 5px;
+  margin-top: 10px;
   padding: 10px 38px;
   font-size: 14px;
   color: #FFF;
@@ -547,6 +555,17 @@ main{
   width: 400px;
 }
 
+.post-form-control{
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px 38px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #555;
+}
+
 .form-brand{
   display: flex;
   flex-wrap: wrap;
@@ -565,6 +584,7 @@ main{
 
 .select-input{
   height: 35px;
+  width: 130px;
   border-radius: 5px;
 }
 

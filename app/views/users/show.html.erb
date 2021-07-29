@@ -22,7 +22,10 @@
         <h3><%= @user.name %></h3>
         <p>性別：<%= @user.gender %></p>
         <p>身長・体重：<%= @user.tall_weight %></p>
-        <P>自己紹介<br/><%= @user.introduction %></P>
+        <div class="user-introduction">
+          <P>自己紹介</P>
+          <%= @user.introduction %>
+        </div>
       </div>
 
       <div class="profile-link">
