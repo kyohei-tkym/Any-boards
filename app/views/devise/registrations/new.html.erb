@@ -7,12 +7,12 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field">
           <%= f.label :"ユーザーネーム" %><br />
-          <%= f.text_field :name, autofocus: true, class:"signup-input" %>
+          <%= f.text_field :name, autofocus: true, placeholder:"ユーザーネームを入力", class:"signup-input" %>
         </div>
 
         <div class="field">
           <%= f.label :"性別" %><br />
-          <%= f.select :gender, {'男性': "男性", '女性': "女性"}, autofocus: true %>
+          <%= f.select :gender, {'男性': "男性", '女性': "女性"}, {}, {class: "select-input"} %>
         </div>
 
         <div class="field">
@@ -22,17 +22,17 @@
 
         <div class="field">
           <%= f.label :"身長・体重" %><br />
-          <%= f.text_field :tall_weight, autofocus: true, class:"signup-input" %>
+          <%= f.text_field :tall_weight, autofocus: true, placeholder:"○○○cm / ○○kg", class:"signup-input" %>
         </div>
 
         <div class="field">
           <%= f.label :"自己紹介" %><br />
-          <%= f.text_area :introduction, autofocus: true, class:"signup-introduction" %>
+          <%= f.text_area :introduction, autofocus: true, placeholder:"例）出身・ホームポイント・好きなサーファーetc..", class:"signup-introduction" %>
         </div>
 
         <div class="field">
           <%= f.label :"メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"signup-input" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレスを入力", class:"signup-input" %>
         </div>
 
         <div class="field">
@@ -40,12 +40,12 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> 文字以上)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"signup-input" %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder:"半角英数６文字以上", class:"signup-input" %>
         </div>
 
         <div class="field">
-          <%= f.label :"もう一度入力" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"signup-input" %>
+          <%= f.label :"確認の為、もう一度入力" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"半角英数６文字以上", class:"signup-input" %>
         </div>
 
         <div class="actions">
