@@ -14,7 +14,7 @@
       <div class="form-detail">
         <%= f.label :"プロフィール画像", class:"form-label" %>
         <%= attachment_image_tag @user, :profile_image, :fill, 400, 400, fallback: "img/no_image.jpg", class:"edit-profile-image"%>
-        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class:"form-input" %>
+        <%= f.attachment_field :profile_image, class:"form-image" %>
       </div>
       <div class="form-detail">
         <%= f.label :"自己紹介", class:"form-label" %>
