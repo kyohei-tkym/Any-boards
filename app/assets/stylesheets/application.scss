@@ -285,10 +285,16 @@ main{
   margin-top: 5px;
 }
 
-.show-images{
+.show-image{
   display: flex;
   flex-direction: column;
   margin-left: 200px;
+}
+
+.show-images{
+  width: 500px;
+  height: 600px;
+  object-fit: contain;
 }
 
 .show-text{
@@ -501,6 +507,7 @@ main{
   border-radius: 5px;
   padding: 10px 30px;
   background-color: #FFF;
+  margin-top: 15px;
 }
 
 .signup-image1{
@@ -601,581 +608,599 @@ main{
 
 //------------------------------------------レスポンシブ-----------------------------------------------
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   header {
-  display: block;
-  text-align: center;
-  width: 100%;
-  height: 130px;
-}
-
-.header-body{
-  width: 100%;
-  display: block;
-  align-items: center;
-  margin: auto;
-}
-
-ul{
-  padding: 0;
-}
-
-.header_list{
-  display: block;
-  margin:  8px;
-  list-style: none;
-  font-size: 10px;
-}
-
-.header-logo{
-  margin: 15px;
-
-}
-
-//--------------フッター-------------
-footer{
-  width: 100%;
-  height: 35px;
-  background-color: #FFF;
-  color: #707070;
-  font-size: 14px;
-  text-align: center;
-  line-height: 35px;
-}
-
-
-//---------------共通---------------
-main{
-  background-color: rgba( 0, 0, 0, 0.1);
-}
-
-.container{
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 60px;
-}
-
-a{
-  text-decoration: none;
-  color: #666666;
-  font-size: 15px;
-}
-
-//----------------トップページ-------------
-
-.image1 {
-  background-image: image-url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
-}
-.image2 {
-  background-image: image-url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
-}
-.image3 {
-  background-image: image-url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg");
-}
-
-#top {
-  height: 90vh;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.top-comment{
-  font-size: 14px;
-  text-align: center;
-  line-height: 30px;
-  padding-top: 150px;
-  color: #555555;
-}
-
-  //新規登録ボタン
-.btn{
-  margin-top: 40px;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid #555;
-  border-radius: 25px;
-  padding: 10px 30px;
-  background:#FFF;
-  text-align: center;
-  outline: none;
-  //アニメーション
-  transition: ease .2s;
-}
-
-.btn span{
-  position: relative;
-  z-index: 3;
-  color: #333;
-}
-
-.btn:hover .sign_btn{
-  color: #fff;
-}
-
-.bgleft:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background:#333;
-  width: 100%;
-  height: 100%;
-  // アニメーション
-  transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
-  transform: scale(0, 1);
-  transform-origin: right top;
-}
-
-.bgleft:hover:before{
-  transform-origin:left top;
-  transform:scale(1, 1);
-}
-
-// ---------my page-----------------
-
-  //編集ボタン
-.btn-show{
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid #555;
-  border-radius: 25px;
-  padding: 3px 8px;
-  background:#FFF;
-  text-align: center;
-  outline: none;
-  // アニメーション
-  transition: ease .2s;
-}
-
-.btn-show span{
-  position: relative;
-  z-index: 3;
-  color: #333;
-}
-
-.btn-show:hover .sign_btn{
-  color: #fff;
-}
-
-.bgcentery:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: #333;
-  width: 100%;
-  height: 100%;
-  //アニメーション
-  transition: transform .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
-  transform: scale(1, 0);
-  transform-origin:center;
-}
-
-.bgcentery:hover:before{
-  transform:scale(1, 1);
-}
-
-.profile-container{
-  display: block;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-image: image-url("img/horizon-2602227_1920.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.profile-contents{
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 0;
-  background-color: rgba( 255, 255, 255, 0.5)
-}
-
-.profile-icon{
-  margin: 0;
-  padding-top: 15px;
-}
-
-.profile-image{
-  border-radius: 50%;
-}
-
-.profile-details{
-  margin-left: 0px;
-}
-
-.user-introduction{
-  text-align: center;
-  margin: 0 auto;
-  width: 70%;
-}
-
-.profile-link{
-  margin: 0 auto;
-}
-
-
-// ----------------投稿一覧---------------
-.index-cantainer{
-  display: block;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 50px;
-  padding: 20px 0;
-  background-color: rgba( 255, 255, 255, 0.5);
-}
-
-.index-image{
-  margin: 0 auto;
-  padding-right: 0px;
-}
-
-.index-details{
-  padding-right: 30px;
-}
-
-//-------------お気に入り一覧--------------
-.favorite-title{
-  text-align: center;
-  padding-top: 60px;
-}
-
-//-----------------投稿詳細----------------
-
-.show-container{
-  display: block;
-  margin-top: 20px;
-}
-
-.show-title{
-  display: block;
-  text-align: center;
-  padding-top: 60px;
-}
-
-.show-nice{
-  margin-left: 0px;
-  margin-top: 5px;
-}
-
-.show-images{
-  display: block;
-  text-align: center;
-  margin-left: 0px;
-}
-
-.show-text{
-  width: 100%;
-  text-align: center;
-  margin-left: 0px;
-}
-
-.show-details{
-  text-align: center;
-  line-height: 20px;
-}
-
-.bold{
-  display: inline-block;
-  width: 100%;
-  font-weight: bold;
-  border-bottom: solid 1px #000;
-}
-
-.destroy{
-  color: red;
-}
-
-//--------------コメント機能----------------
-
-.comment{
-  width: 100%;
-  margin: 0 auto;
-}
-
-.comment-title{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.comment-count{
-  margin-left: 10px;
-  margin-top: 27px;
-  font-size: 20px;
-}
-
-.comment-contents{
-  display: flex;
-  flex-direction: column;
-}
-
-.comment-index{
-  display: block;
-  text-align: center;
-}
-
-.comment-details{
-  margin: 10px;
-}
-
-.comment-new{
-  display: block;
-  text-align: center;
-}
-
-.comment-form{
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 5px;
-}
-//-------------プロフィール編集機能----------------
-
-.edit-profile-container{
-  display: flex;
-  justify-content: center;
-}
-
-.edit-profile-title{
-  text-align: center;
-  padding-top: 60px;
-}
-
-.edit-profile-detail{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
-  width: 400px;
-}
-
-
-.edit-profile-image{
- height: 400px;
-}
-
-.form-input{
-  height: 30px;
-  border-radius: 5px;
-}
-
-.form-input-introduction{
-  height: 80px;
-  border-radius: 5px;
-}
-
-//-------------検索結果画面-----------------
-.search-user-container{
-  display: flex;
-  justify-content: center;
-  width: 600px;
-  margin: 0 auto;
-}
-
-.search-user-title{
-  text-align: center;
-  padding-top: 40px;
-}
-
-.search-user-contents{
-  display: flex;
-  margin-bottom: 40px;
-  background-color: #FFF;
-  padding: 20px 20px;
-}
-
-.search-user-icon{
-  margin-right: 30px;
-  margin-top: 30px;
-}
-
-//------------検索フォーム-----------
-.search-container{
-  display: block;
-  width: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-image: image-url("img/jeremy-bishop-bUfLNUZ2QH8-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.search-contents{
-  display: block;
-  width: 100%;
-  padding: 15px 0;
-  background-color: rgba( 255, 255, 255, 0.7)
-}
-
-.brand-search{
-  text-align: center;
-}
-
-.keyword-search{
-  text-align: center;
-  margin-left: 0px;
-}
-
-.genre-search{
-  text-align: center;
-  margin-left: 0px;
-}
-
-.search-form{
-  width: 150px;
-}
-
-.search-title{
-  text-align: center;
-}
-
-//--------ログイン・サインイン画面-----------
-.signup-container{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-bottom: 60px;
-}
-
-.signup-form{
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
-.signup-input{
-  width: 400px;
-  height: 30px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.signup-introduction{
-  width: 400px;
-  height: 60px;
-  border-radius: 5px;
-}
-
-.form-control{
-  display: flex;
-  border: 1px solid #555;
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 10px 38px;
-  font-size: 14px;
-  color: #FFF;
-  background-color: #555;
-}
-
-.form-image{
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 10px 30px;
-  background-color: #FFF;
-}
-
-.signup-image1{
-  width: 100%;
-  height: 250px;
-  margin: 0 auto;
-  background-image: image-url("img/edoardo-cuoghi-J_BExO7Dvgg-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.signup-image2{
-  width: 100%;
-  height: 250px;
-  margin: 0 auto;
-  background-image: image-url("img/sean-benesh-iskzJ8GkIgI-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-
-.form-links{
-  display: inline-block;
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 10px 30px;
-  color: #FFF;
-  background-color: #FFF;
-  margin-top: 20px;
-}
-
-//-------ページネーション---------
-.pagination {
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
-  font-size: 16px;
-}
-
-
-//---------投稿画面--------------
-.form-container{
-  display: flex;
-  justify-content: center;
-}
-
-.form-detail{
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 40px;
-  width: 400px;
-}
-
-.post-form-control{
-  display: flex;
-  margin: 0 auto;
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 10px 38px;
-  font-size: 14px;
-  color: #FFF;
-  background-color: #555;
-}
-
-.form-brand{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 20px;
-  width: 400px;
-  height: 200px;
-}
-
-.search-submit{
-  display: inline-block;
-  border: 1px solid #555;
-  border-radius: 5px;
-  height: 30px;
-}
-
-.select-input{
-  height: 35px;
-  width: 130px;
-  border-radius: 5px;
-}
-
-.post-title{
-  text-align: center;
-  padding-top: 60px;
-}
-
-.post-btn{
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
-}
-
-
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 130px;
+  }
+
+  .header-body{
+    width: 100%;
+    display: block;
+    align-items: center;
+    margin: auto;
+  }
+
+  ul{
+    padding: 0;
+  }
+
+  .header_list{
+    display: block;
+    margin:  8px;
+    list-style: none;
+    font-size: 10px;
+  }
+
+  .header-logo{
+    margin: 15px;
+
+  }
+
+  //--------------フッター-------------
+  footer{
+    width: 100%;
+    height: 35px;
+    background-color: #FFF;
+    color: #707070;
+    font-size: 14px;
+    text-align: center;
+    line-height: 35px;
+  }
+
+
+  //---------------共通---------------
+  main{
+    background-color: rgba( 0, 0, 0, 0.1);
+  }
+
+  .container{
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 60px;
+  }
+
+  a{
+    text-decoration: none;
+    color: #666666;
+    font-size: 15px;
+  }
+
+  //----------------トップページ-------------
+
+  .image1 {
+    background-image: image-url("img/jonathan-borba-zh8M3cvvtmY-unsplash.jpg");
+  }
+  .image2 {
+    background-image: image-url("img/knut-robinson-Ti-fU32DPnY-unsplash.jpg");
+  }
+  .image3 {
+    background-image: image-url("img/cameron-stow-G61o_s1gBYI-unsplash.jpg");
+  }
+
+  #top {
+    height: 90vh;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .top-comment{
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    padding-top: 150px;
+    color: #555555;
+  }
+
+    //新規登録ボタン
+  .btn{
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #555;
+    border-radius: 25px;
+    padding: 10px 30px;
+    background:#FFF;
+    text-align: center;
+    outline: none;
+    //アニメーション
+    transition: ease .2s;
+  }
+
+  .btn span{
+    position: relative;
+    z-index: 3;
+    color: #333;
+  }
+
+  .btn:hover .sign_btn{
+    color: #fff;
+  }
+
+  .bgleft:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background:#333;
+    width: 100%;
+    height: 100%;
+    // アニメーション
+    transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+    transform: scale(0, 1);
+    transform-origin: right top;
+  }
+
+  .bgleft:hover:before{
+    transform-origin:left top;
+    transform:scale(1, 1);
+  }
+
+  // ---------my page-----------------
+
+    //編集ボタン
+  .btn-show{
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #555;
+    border-radius: 25px;
+    padding: 3px 8px;
+    background:#FFF;
+    text-align: center;
+    outline: none;
+    // アニメーション
+    transition: ease .2s;
+  }
+
+  .btn-show span{
+    position: relative;
+    z-index: 3;
+    color: #333;
+  }
+
+  .btn-show:hover .sign_btn{
+    color: #fff;
+  }
+
+  .bgcentery:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #333;
+    width: 100%;
+    height: 100%;
+    //アニメーション
+    transition: transform .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+    transform: scale(1, 0);
+    transform-origin:center;
+  }
+
+  .bgcentery:hover:before{
+    transform:scale(1, 1);
+  }
+
+  .profile-container{
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: image-url("img/horizon-2602227_1920.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .profile-contents{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    background-color: rgba( 255, 255, 255, 0.5)
+  }
+
+  .profile-icon{
+    margin: 0;
+    padding-top: 15px;
+  }
+
+  .profile-image{
+    border-radius: 50%;
+  }
+
+  .profile-details{
+    margin-left: 0px;
+  }
+
+  .user-introduction{
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .profile-link{
+    margin: 0 auto;
+  }
+
+
+  // ----------------投稿一覧---------------
+  .index-cantainer{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: rgba( 255, 255, 255, 0.5);
+  }
+
+  .index-image{
+    margin: 0 auto;
+    padding-right: 0px;
+  }
+
+  .index-details{
+    padding-right: 0px;
+  }
+
+  //-------------お気に入り一覧--------------
+  .favorite-title{
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  //-----------------投稿詳細----------------
+
+  .show-container{
+    display: block;
+    margin-top: 20px;
+  }
+
+  .show-title{
+    display: block;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .show-nice{
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  .show-image{
+    display: block;
+    margin: 0 auto;
+  }
+
+  .show-images{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .show-text{
+    width: 100%;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .show-details{
+    text-align: center;
+    line-height: 20px;
+  }
+
+  .bold{
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    border-bottom: solid 1px #000;
+  }
+
+  .destroy{
+    color: red;
+  }
+
+  //--------------コメント機能----------------
+
+  .comment{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .comment-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .comment-count{
+    margin-left: 10px;
+    margin-top: 27px;
+    font-size: 20px;
+  }
+
+  .comment-contents{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comment-index{
+    display: block;
+    text-align: center;
+  }
+
+  .comment-details{
+    margin: 10px;
+  }
+
+  .comment-new{
+    display: block;
+    text-align: center;
+  }
+
+  .comment-form{
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  //-------------プロフィール編集機能----------------
+
+  .edit-profile-container{
+    display: block;
+    text-align: center;
+  }
+
+  .edit-profile-title{
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .edit-profile-detail{
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+
+  .edit-profile-image{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+  }
+
+  .form-input{
+    display: block;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .form-input-introduction{
+    height: 80px;
+    border-radius: 5px;
+  }
+
+  //-------------検索結果画面-----------------
+  .search-user-container{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .search-user-title{
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .search-user-contents{
+    display: block;
+    margin-bottom: 40px;
+    background-color: rgba( 255, 255, 255, 0.5);
+    padding: 20px 0px;
+  }
+
+  .search-user-icon{
+    margin-right: 0px;
+    margin-top: 30px;
+  }
+
+  //------------検索フォーム-----------
+  .search-container{
+    display: block;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-image: image-url("img/jeremy-bishop-bUfLNUZ2QH8-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .search-contents{
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgba( 255, 255, 255, 0.7)
+  }
+
+  .brand-search{
+    text-align: center;
+  }
+
+  .keyword-search{
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .genre-search{
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .search-form{
+    width: 150px;
+  }
+
+  .search-title{
+    text-align: center;
+  }
+
+  //--------ログイン・サインイン画面-----------
+  .signup-container{
+    display: block;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+
+  .signup-form{
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .signup-input{
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .signup-introduction{
+    width: 90%;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .form-control{
+    display: flex;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 10px 38px;
+    font-size: 14px;
+    color: #FFF;
+    background-color: #555;
+    margin: 0 auto;
+  }
+
+  .form-image{
+    text-align: center;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #FFF;
+    margin-bottom: 15px;
+  }
+
+  .signup-image1{
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    background-image: image-url("img/edoardo-cuoghi-J_BExO7Dvgg-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .signup-image2{
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    background-image: image-url("img/sean-benesh-iskzJ8GkIgI-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .form-links{
+    display: inline-block;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px 30px;
+    color: #FFF;
+    background-color: #FFF;
+    margin-top: 20px;
+  }
+
+  //-------ページネーション---------
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 16px;
+  }
+
+
+  //---------投稿画面--------------
+  .form-container{
+    display: block;
+    justify-content: center;
+  }
+
+  .form-detail{
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 40px;
+    width: 90%;
+  }
+
+  .post-form-control{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 0;
+    font-size: 14px;
+    color: #FFF;
+    background-color: #555;
+  }
+
+  .form-brand{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .search-submit{
+    display: inline-block;
+    border: 1px solid #555;
+    border-radius: 5px;
+    height: 30px;
+  }
+
+  .select-input{
+    height: 35px;
+    width: 60%;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  .post-title{
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .post-btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+  }
 }
