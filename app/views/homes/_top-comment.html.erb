@@ -5,8 +5,10 @@
     早速お気に入りのボードを世界中に自慢しましょう！
   </p>
   <% if user_signed_in? %>
+    <!--ログイン後に表示するボタン-->
     <div class="btn bgleft"><span><%= link_to "ボードを探す", posts_path, class:"sign_btn" %></span></div>
   <% else %>
+    <!--ログイン前に表示するボタン-->
     <div class="btn bgleft"><span><%= link_to "新規登録", new_user_registration_path, class:"sign_btn" %></span></div>
   <% end %>
 </div>

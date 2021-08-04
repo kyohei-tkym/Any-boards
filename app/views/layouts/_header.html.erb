@@ -1,16 +1,18 @@
 <header>
   <div class="header-body">
     <h1 class="header-logo">
-      <a><%= link_to "Any boards", root_path, 'data-turbolinks': false %></a>
+      <%= link_to "Any boards", root_path, 'data-turbolinks': false %>
     </h1>
     <nav>
      <% if user_signed_in? %>
+     <!--ログイン後のヘッダー-->
       <ul>
         <li class="header_list"><a><%= link_to 'my page', user_path(current_user.id) %></a></li>
         <li class="header_list"><a><%= link_to 'boards', posts_path %></a></li>
         <li class="header_list"><a><%= link_to "log out", destroy_user_session_path, method: :delete %></a></li>
       </ul>
     <% else %>
+    <!--ログイン前のヘッダー-->
       <ul>
         <li class="header_list"><a><%= link_to "log in", new_user_session_path %></a></li>
         <li class="header_list"><a><%= link_to "sign up", new_user_registration_path %></a></li>
