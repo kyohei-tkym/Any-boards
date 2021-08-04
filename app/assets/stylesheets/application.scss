@@ -39,11 +39,6 @@ nav{
   margin-left: 30px;
 }
 
-a{
-  text-decoration: none;
-  color: #666666;
-  font-size: 18px;
-}
 
 .header_list{
   display: inline-block;
@@ -73,6 +68,52 @@ main{
   width: 100%;
   margin: 0 auto;
   padding-bottom: 60px;
+}
+
+a{
+  text-decoration: none;
+  color: #666666;
+  font-size: 18px;
+}
+
+//-----------------------フォーム共通-------------------------------
+.form-detail{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  width: 400px;
+}
+
+.search-submit{
+  display: inline-block;
+  border: 1px solid #555;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.select-input{
+  height: 35px;
+  width: 130px;
+  border-radius: 5px;
+}
+
+.form-image{
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px 30px;
+  background-color: #FFF;
+  margin-top: 15px;
+}
+
+.form-control{
+  display: flex;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 38px;
+  font-size: 14px;
+  color: #FFF;
+  background-color: #555;
 }
 
 
@@ -398,7 +439,7 @@ main{
   border-radius: 5px;
 }
 
-//-------------検索結果画面-----------------
+//----------------------検索結果画面--------------------
 .search-user-container{
   display: flex;
   justify-content: center;
@@ -423,7 +464,7 @@ main{
   margin-top: 30px;
 }
 
-//------------検索フォーム-----------
+//------------------------検索フォーム---------------------------
 .search-container{
   display: flex;
   justify-content: center;
@@ -465,7 +506,7 @@ main{
   text-align: center;
 }
 
-//--------ログイン・サインイン画面-----------
+//-------------------------ログイン・サインイン画面------------------------
 .signup-container{
   display: flex;
   flex-direction: column;
@@ -489,25 +530,6 @@ main{
   width: 400px;
   height: 60px;
   border-radius: 5px;
-}
-
-.form-control{
-  display: flex;
-  border: 1px solid #555;
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 10px 38px;
-  font-size: 14px;
-  color: #FFF;
-  background-color: #555;
-}
-
-.form-image{
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 10px 30px;
-  background-color: #FFF;
-  margin-top: 15px;
 }
 
 .signup-image1{
@@ -539,7 +561,7 @@ main{
   margin-top: 20px;
 }
 
-//-------ページネーション---------
+//--------------------------ページネーション--------------------------------
 .pagination {
   display: flex;
   justify-content: center;
@@ -547,18 +569,10 @@ main{
   font-size: 16px;
 }
 
-
-//---------投稿画面--------------
+//----------------------投稿画面--------------------------------
 .form-container{
   display: flex;
   justify-content: center;
-}
-
-.form-detail{
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 40px;
-  width: 400px;
 }
 
 .post-form-control{
@@ -581,19 +595,6 @@ main{
   height: 200px;
 }
 
-.search-submit{
-  display: inline-block;
-  border: 1px solid #555;
-  border-radius: 5px;
-  height: 30px;
-}
-
-.select-input{
-  height: 35px;
-  width: 130px;
-  border-radius: 5px;
-}
-
 .post-title{
   text-align: center;
   padding-top: 60px;
@@ -605,8 +606,9 @@ main{
   padding-top: 40px;
 }
 
-
+//-----------------------------------------------------------------------------------------------------
 //------------------------------------------レスポンシブ-----------------------------------------------
+//-----------------------------------------------------------------------------------------------------
 
 @media screen and (max-width: 1024px) {
   header {

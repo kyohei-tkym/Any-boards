@@ -39,9 +39,11 @@
       </div>
     </div>
   </div>
+  <!--投稿フォームへのリンクボタン-->
   <div class="post-btn">
     <div class="btn-show bgcentery"><span><%= link_to "POST", new_post_path, class:"sign_btn" %></span></div>
   </div>
+  <!--投稿一覧-->
   <div class="post-index">
     <%= render 'posts/post-index', posts: @posts %>
   </div>

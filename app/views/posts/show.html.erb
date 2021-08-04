@@ -1,6 +1,7 @@
 <div class="container">
   <div class="show-title">
     <h2><%= @post.user.name %>'s　<%= @post.title %></h2>
+    <!--お気に入り機能-->
     <div class="show-nice" id="post-favorite_<%= @post.id %>">
       <%= render 'posts/post-favorite', post: @post %>
     </div>
@@ -29,9 +30,11 @@
         <p class="bold"><%= link_to @post.user.name, user_path(@post.user_id) %></p>
         <p>詳細</p>
         <p class="bold"><%= @post.body %></p>
-         <% if @post.user == current_user %>
+        <!--削除ボタン-->
+        <% if @post.user == current_user %>
           <p><%= link_to "Destroy", post_path(@post), method: :delete, class:"destroy" %></p>
         <% end %>
+        <!--編集画面へのリンクボタン-->
         <% if @post.user == (current_user) %>
           <div class="btn-show bgcentery"><span><%= link_to "Edit", edit_post_path(@post), class:"sign_btn" %></span></div>
         <% end %>
@@ -39,6 +42,7 @@
     </div>
   </div>
 
+  <!--コメント機能-->
   <div class="comment">
     <div class="comment-title">
       <h2>コメント</h2>

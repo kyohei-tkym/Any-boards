@@ -1,5 +1,6 @@
 <div class="search-container">
   <div class="search-contents">
+    <!--ブランドタグ検索フォーム-->
     <div class="brand-search">
       <p>ブランドで検索</p>
       <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
@@ -8,6 +9,7 @@
         %>
       <% end %>
     </div>
+    <!--キーワード検索フォーム-->
     <div class="keyword-search">
     <p>キーワードで検索</p>
     <% if user_signed_in? %>
@@ -18,6 +20,7 @@
       <% end %>
     <% end %>
     </div>
+    <!--ジャンル検索フォーム-->
     <div class="genre-search">
       <p>ボードの種類で検索</p>
     <% if user_signed_in? %>
@@ -29,9 +32,11 @@
     </div>
   </div>
 </div>
+<!--投稿フォームへのリンクボタン-->
 <div class="post-btn">
   <div class="btn-show bgcentery"><span><%= link_to "POST", new_post_path, class:"sign_btn" %></span></div>
 </div>
+<!--投稿一覧-->
 <%= render 'post-index', posts: @posts %>
 
 

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post   #------ブランドタグ一覧を表示する-------
     @posts = @posts.page(params[:page]).reverse_order
   end
 
