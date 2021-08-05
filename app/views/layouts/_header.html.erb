@@ -7,15 +7,15 @@
      <% if user_signed_in? %>
      <!--ログイン後のヘッダー-->
       <ul>
-        <li class="header_list"><a><%= link_to 'my page', user_path(current_user.id) %></a></li>
-        <li class="header_list"><a><%= link_to 'boards', posts_path %></a></li>
-        <li class="header_list"><a><%= link_to "log out", destroy_user_session_path, method: :delete %></a></li>
+        <li class="header_list"><a><%= link_to 'My page', user_path(current_user.id) %></a></li>
+        <li class="header_list"><a><%= link_to 'Boards', posts_path %></a></li>
+        <li class="header_list"><a><%= link_to "Log out", destroy_user_session_path, method: :delete %></a></li>
       </ul>
     <% else %>
     <!--ログイン前のヘッダー-->
       <ul>
-        <li class="header_list"><a><%= link_to "log in", new_user_session_path %></a></li>
-        <li class="header_list"><a><%= link_to "sign up", new_user_registration_path %></a></li>
+        <li class="header_list"><a><%= link_to "Log in", new_user_session_path %></a></li>
+        <li class="header_list"><a><%= link_to "Sign up", new_user_registration_path %></a></li>
       </ul>
     <% end %>
     </nav>
