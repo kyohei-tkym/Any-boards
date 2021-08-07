@@ -32,6 +32,8 @@
 - ER図：https://drive.google.com/file/d/1HcikPnTRusK_qXl9YxoR_cEv_fZqd9NS/view?usp=sharing
 - テーブル定義書：https://docs.google.com/spreadsheets/d/1K2gYfGHyMEdaslbT5frf2AbBsCDcYzSRMM8LSDhLkdM/edit?usp=sharing
 - 詳細設計：https://docs.google.com/spreadsheets/d/156O8mLF0jW5jmL2DXpt-BeoLhCpdFTr2Pa0xsezqqPc/edit?usp=sharing
+- AWS構成図：https://lucid.app/lucidchart/invitations/accept/inv_b791a3e5-2e95-490e-a1ec-3a3cc384223f?viewport_loc=-236%2C-36%2C2202%2C1116%2C0_0
+- インフラ設計書：https://docs.google.com/spreadsheets/d/1syerQ5mVt9yn7Npa5wkcRldPGgU9MiJkFHpTUWCqcZY/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1qqNYpHnviVhLLOvzCM26CGV5oaGPCTBdS-4AOGCXM-Q/edit?usp=sharing
