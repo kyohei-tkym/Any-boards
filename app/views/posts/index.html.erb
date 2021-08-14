@@ -14,8 +14,8 @@
     <p>キーワードで検索</p>
     <% if user_signed_in? %>
       <%= form_with url:search_path, method: :get, local: true do |f| %>
-        <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }), {}, {class: "select-input"} %>
-        <%= f.text_field 'search[value]', class:"form-input" %>
+        <%= f.select 'search[model]', options_for_select({ "ユーザーをキーワード検索" => "user", "投稿をキーワード検索" => "post" }), {}, {class: "select-input"} %>
+        <%= f.text_field 'search[value]', placeholder:"キーワードを入力", class:"form-input" %>
         <%= f.submit :"検索", class:"search-submit" %>
       <% end %>
     <% end %>
