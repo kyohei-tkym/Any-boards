@@ -29,7 +29,7 @@
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :tag_name) do |tag| %>
           <%= tag.label do %>
             <%= tag.check_box %>
-            <%= tag.text %>｜
+            <%= tag.text %>
           <% end %>
         <% end %>
         </div>
