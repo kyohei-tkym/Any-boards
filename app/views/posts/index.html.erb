@@ -5,7 +5,7 @@
       <p>ブランドで検索</p>
       <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
         <%= select_tag :tag_id,options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
-          { prompt: 'ブランドで絞り込む',onchange: 'submit(this.form);', class:"select-input"}
+          { prompt: "ブランドで絞り込む",onchange: 'submit(this.form);', class:"select-input"}
         %>
       <% end %>
     </div>
@@ -14,7 +14,7 @@
     <p>キーワードで検索</p>
     <% if user_signed_in? %>
       <%= form_with url:search_path, method: :get, local: true do |f| %>
-        <%= f.select 'search[model]', options_for_select({ "ユーザーをキーワード検索" => "user", "投稿をキーワード検索" => "post" }), {}, {class: "select-input"} %>
+        <%= f.select 'search[model]', options_for_select({ "ユーザーをキーワード検索" => "user", "ボード名をキーワード検索" => "post" }), {}, {class: "select-input"} %>
         <%= f.text_field 'search[value]', placeholder:"キーワードを入力", class:"form-input" %>
         <%= f.submit :"検索", class:"search-submit" %>
       <% end %>
