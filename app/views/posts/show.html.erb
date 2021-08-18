@@ -12,27 +12,27 @@
       　<%= attachment_image_tag post_image, :image, class:"show-images" %>
       <% end %>
     </div>
-    <div class="show-text">
+    <div class="show-contents">
       <div class="show-details">
-        <p>ボードモデル</p>
-        <p class="bold"><%= @post.title %></p>
-        <p>ジャンル</p>
-        <p class="bold"><%= @post.genre %></p>
-        <p>ブランド</p>
+        <p class="show-text">ボードモデル</p>
+        <p class="show-text bold"><%= @post.title %></p>
+        <p class="show-text">ジャンル</p>
+        <p class="show-text bold"><%= @post.genre %></p>
+        <p class="show-text">ブランド</p>
           <% @post.tags.each do |tag| %>
-            <p class="bold"><%= tag.tag_name %></p>
+            <p class="show-text bold"><%= tag.tag_name %></p>
           <% end %>
-        <p>サイズ・浮力</p>
-        <p class="bold"><%= @post.size %></p>
-        <p>身長・体重</p>
-        <p class="bold"><%= @post.user.tall_weight %></p>
-        <p>ユーザー</p>
-        <p class="bold"><%= link_to @post.user.name, user_path(@post.user_id) %></p>
-        <p>詳細</p>
-        <p class="bold"><%= @post.body %></p>
+        <p class="show-text">サイズ・浮力</p>
+        <p class="show-text bold"><%= @post.size %></p>
+        <p class="show-text">身長・体重</p>
+        <p class="show-text bold"><%= @post.user.tall_weight %></p>
+        <p class="show-text">ユーザー</p>
+        <p class="show-text bold"><%= link_to @post.user.name, user_path(@post.user_id) %></p>
+        <p class="show-text">詳細</p>
+        <p class="show-text bold"><%= @post.body %></p>
         <!--削除ボタン-->
         <% if @post.user == current_user %>
-          <p><%= link_to "Destroy", post_path(@post), method: :delete, class:"destroy" %></p>
+          <p class="show-text"><%= link_to "Destroy", post_path(@post), method: :delete, class:"destroy" %></p>
         <% end %>
         <!--編集画面へのリンクボタン-->
         <% if @post.user == (current_user) %>
@@ -54,7 +54,7 @@
         <p class="comment-icon"><%= attachment_image_tag post_comment.user, :profile_image, :fill, 40, 40, fallback: "img/no_image.jpg", class:"profile-image"%></p>
         <p class="comment-details"><%= post_comment.user.name %></p>
         <p class="comment-details"><%= post_comment.created_at.strftime('%Y/%m/%d') %></p>
-        <p class="comment-details"><%= post_comment.comment %></p>
+        <p class="comment-body"><%= post_comment.comment %></p>
         <div class="comment-details">
           <% if post_comment.user == current_user %>
             <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>

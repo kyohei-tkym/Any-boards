@@ -14,6 +14,11 @@
  *= require_self
  */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 //-----------ヘッダー---------------
 header {
@@ -50,12 +55,12 @@ nav{
 //--------------フッター-------------
 footer{
   width: 100%;
-  height: 35px;
+  height: 50px;
   background-color: #FFF;
   color: #707070;
   font-size: 16px;
   text-align: center;
-  line-height: 35px;
+  line-height: 50px;
 }
 
 
@@ -92,7 +97,7 @@ a{
   display: inline-block;
   border: 1px solid #555;
   border-radius: 5px;
-  height: 30px;
+  padding: 8px 15px;
 }
 
 .select-input{
@@ -145,13 +150,13 @@ a{
   font-size: 20px;
   text-align: center;
   line-height: 30px;
-  padding-top: 120px;
+  padding-top: 170px;
   color: #777777;
 }
 
   //新規登録ボタン
 .btn{
-  margin-top: 40px;
+  margin-top: 50px;
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -206,7 +211,7 @@ a{
   display: inline-block;
   border: 1px solid #555;
   border-radius: 25px;
-  padding: 3px 8px;
+  padding: 4px 10px;
   background:#FFF;
   text-align: center;
   outline: none;
@@ -255,14 +260,16 @@ a{
 
 }
 
+
 .profile-contents{
   display: flex;
   width: 900px;
-  padding: 20px;
+  padding: 40px;
   background-color: rgba( 255, 255, 255, 0.5)
 }
 
 .profile-icon{
+  margin-top: 20px;
   margin-left: 40px;
 }
 
@@ -272,6 +279,10 @@ a{
 
 .profile-details{
   margin-left: 60px;
+}
+
+.profile-text{
+  margin-bottom: 20px;
 }
 
 .user-introduction{
@@ -289,7 +300,7 @@ a{
 .index-cantainer{
   display: flex;
   justify-content: center;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 20px 20px;
@@ -297,12 +308,15 @@ a{
 }
 
 .index-image{
-  margin: 20px;
   padding-right: 40px;
 }
 
 .index-details{
   padding-right: 30px;
+}
+
+.index-text{
+  margin-bottom: 10px;
 }
 
 //-------------お気に入り一覧--------------
@@ -327,7 +341,6 @@ a{
 
 .show-nice{
   margin-left: 20px;
-  margin-top: 5px;
 }
 
 .show-image{
@@ -337,22 +350,28 @@ a{
 }
 
 .show-images{
-  width: 500px;
-  height: 600px;
+  width: 600px;
+  height: 700px;
   object-fit: contain;
 }
 
-.show-text{
+.show-contents{
   width: 40%;
   margin-left: 80px;
 }
 
+.show-text{
+  margin-bottom: 10px;
+}
+
 .show-details{
+  margin-top: 40px;
   line-height: 20px;
 }
 
 .bold{
   width: 280px;
+  font-size: 18px;
   font-weight: bold;
   border-bottom: solid 1px #000;
 }
@@ -372,11 +391,12 @@ a{
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .comment-count{
   margin-left: 10px;
-  margin-top: 27px;
+  margin-top: 5px;
   font-size: 20px;
 }
 
@@ -394,13 +414,22 @@ a{
   margin: 30px;
 }
 
+.comment-body{
+  margin: 30px;
+  width: 320px;
+}
+
+.comment-icon{
+  margin-top: 10px;
+}
+
 .comment-new{
   display: flex;
   justify-content: center;
 }
 
 .comment-form{
-  width: 600px;
+  width: 300px;
   margin: 0 auto;
   border-radius: 5px;
 }
@@ -444,28 +473,39 @@ a{
 }
 
 //----------------------検索結果画面--------------------
-.search-user-container{
+.user-container{
   display: flex;
   justify-content: center;
   width: 600px;
   margin: 0 auto;
 }
 
-.search-user-title{
+.user-title{
   text-align: center;
   padding-top: 40px;
 }
 
-.search-user-contents{
+.user-contents{
   display: flex;
-  margin-bottom: 40px;
-  background-color: #FFF;
+  justify-content: center;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
   padding: 20px 20px;
+  background-color: #FFF;
 }
 
-.search-user-icon{
-  margin-right: 30px;
-  margin-top: 30px;
+.user-text{
+  margin-bottom: 10px;
+}
+
+.user-icon{
+  margin-right: 60px;
+}
+
+.search-title{
+  text-align: center;
+  padding-top: 40px;
 }
 
 //------------------------検索フォーム---------------------------
@@ -473,8 +513,8 @@ a{
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 90px;
+  padding-bottom: 90px;
   background-image: image-url("img/jeremy-bishop-bUfLNUZ2QH8-unsplash.jpg");
   background-size: cover;
   background-position: center;
@@ -483,8 +523,8 @@ a{
 .search-contents{
   display: flex;
   justify-content: center;
-  width: 900px;
-  padding: 20px;
+  width: 1100px;
+  padding: 50px;
   background-color: rgba( 255, 255, 255, 0.7)
 }
 
@@ -887,7 +927,7 @@ a{
     object-fit: contain;
   }
 
-  .show-text{
+  .show-contents{
     width: 100%;
     text-align: center;
     margin-left: 0px;
@@ -901,6 +941,7 @@ a{
   .bold{
     display: inline-block;
     width: 100%;
+    font-size: 18px;
     font-weight: bold;
     border-bottom: solid 1px #000;
   }
@@ -924,7 +965,7 @@ a{
 
   .comment-count{
     margin-left: 10px;
-    margin-top: 27px;
+    margin-top: 5px;
     font-size: 20px;
   }
 
@@ -940,6 +981,11 @@ a{
 
   .comment-details{
     margin: 10px;
+  }
+
+  .comment-body{
+    margin: 10px;
+    width: 100%;
   }
 
   .comment-new{
@@ -1038,16 +1084,19 @@ a{
 
   .brand-search{
     text-align: center;
+    margin-bottom: 10px;
   }
 
   .keyword-search{
     text-align: center;
     margin-left: 0px;
+    margin-bottom: 10px;
   }
 
   .genre-search{
     text-align: center;
     margin-left: 0px;
+    margin-bottom: 10px;
   }
 
   .search-form{
@@ -1183,7 +1232,6 @@ a{
     display: inline-block;
     border: 1px solid #555;
     border-radius: 5px;
-    height: 30px;
   }
 
   .select-input{
