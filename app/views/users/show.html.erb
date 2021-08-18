@@ -2,7 +2,7 @@
   <div class="profile-container">
     <div class="profile-contents">
       <div class="profile-title">
-        <h2>Profile</h2>
+        <h1>Profile</h1>
         <% if @user == (current_user) %>
           <div class="btn-show bgcentery"><span><%= link_to "Edit", edit_user_path(@user), class:"sign_btn" %></span></div>
         <% else %>
@@ -19,9 +19,9 @@
       </div>
 
       <div class="profile-details">
-        <h3><%= @user.name %></h3>
-        <p>性別：<%= @user.gender %></p>
-        <p>身長・体重：<%= @user.tall_weight %></p>
+        <h3 class="profile-text"><%= @user.name %></h3>
+        <p class="profile-text">性別：<%= @user.gender %></p>
+        <p class="profile-text">身長・体重：<%= @user.tall_weight %></p>
         <div class="user-introduction">
           <P>自己紹介</P>
           <%= @user.introduction %>
@@ -30,12 +30,12 @@
 
       <div class="profile-link">
         <% if @user == (current_user) %>
-          <p>NICE：<%= link_to "#{@user.favorites.count}", favorites_users_path(@user.id) %></p>
+          <p class="profile-text">NICE：<%= link_to "#{@user.favorites.count}", favorites_users_path(@user.id) %></p>
         <% else %>
-          <p>NICE：<%= @user.favorites.count %>
+          <p class="profile-text">NICE：<%= @user.favorites.count %>
         <% end %>
-        <p>Follow：<%= link_to "#{@user.followings.count}", user_followings_path(@user.id) %></p>
-        <p>Follower：<%= link_to "#{@user.followers.count}", user_followers_path(@user.id) %></p>
+        <p class="profile-text">Follow：<%= link_to "#{@user.followings.count}", user_followings_path(@user.id) %></p>
+        <p class="profile-text">Follower：<%= link_to "#{@user.followers.count}", user_followers_path(@user.id) %></p>
       </div>
     </div>
   </div>
