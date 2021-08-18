@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="search-user-container">
-    <div class="search-user-card">
-    <h2 class="search-user-title">Follow</h2>
+  <div class="user-container">
+    <div class="user-card">
+    <h2 class="user-title">Follow</h2>
     <% if @users.exists? %>
       <%= render 'users', users: @users %>
     <% else %>
