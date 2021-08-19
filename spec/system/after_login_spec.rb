@@ -16,17 +16,17 @@ describe '[STEP2] ユーザログイン後のテスト' do
   end
 
   describe 'ヘッダーのテスト: ログインしている場合' do
-    context 'リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。' do
+    context 'リンクの内容を確認: ※Logoutはテスト済み。' do
       subject { current_path }
 
-      it 'my pageを押すと、自分のユーザ詳細画面に遷移する' do
-        mypage_link = find_all('a')[3].native.inner_text
-        mypage_link = mypage_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-        click_link mypage_link
+      it 'My pageを押すと、自分のユーザ詳細画面に遷移する' do
+        Mypage_link = find_all('a')[2].native.inner_text
+        Mypage_link = Mypage_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
+        click_link Mypage_link
         is_expected.to eq '/users/' + user.id.to_s
       end
-      it 'boardsを押すと、post一覧画面に遷移する' do
-        posts_link = find_all('a')[5].native.inner_text
+      it 'Boardsを押すと、post一覧画面に遷移する' do
+        posts_link = find_all('a')[4].native.inner_text
         posts_link = posts_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
         click_link posts_link
         is_expected.to eq '/posts'
