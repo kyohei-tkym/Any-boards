@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+
   resources :users,only: [:show, :edit, :update] do
     collection do
       get :favorites
