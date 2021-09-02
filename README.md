@@ -13,13 +13,14 @@
 
 ### テーマを選んだ理由
 私自身、趣味でサーフィンを初めて一年が経ちます。サーフボードの買い替えを悩んでいる時は、海にいるサーファーが持っているボードを隈なくチェックしました。
-しかし、コロナの影響で海の中も以前より人との距離が少し遠くなり、全く知らない方とのコミュニケーションはやはり躊躇してしまいます。
+しかし、コロナの影響で海の中も以前より人との距離が少し遠くなり、声を掛けたくても全く知らない方とのコミュニケーションはやはり躊躇してしまいます。
 日本ではまだまだマイノリティーであるサーファーがもっと気軽にコミュニケーションを取り、私のような初心者でも様々なレベルのサーファーから情報をピックできればもっとのめり込めるはずです。
-また、レベル関係なくお気に入りのサーフボードは誰かに自慢したいものですが、サーファ同士でないと意味がありません。
+また、レベル関係なくお気に入りのサーフボードは誰かに自慢したいものですが、サーファ同士でないとあまり意味がありません。
 まだまだ人口の少ないスポーツだからこそ、形成できるコミュニティーもあると思いこのサイトを作ることにしました。
 
 ### ターゲットユーザ
-自分に合うサーフボードに出会いたい全てのサーファー
+- 自分に合うサーフボードに出会いたい全てのサーファー
+- 世界中に自分のサーフボードを自慢したいサーファー
 
 ### 主な利用シーン
 - サーフボードの購入を考えてる人の情報収集
@@ -32,6 +33,8 @@
 - ER図：https://drive.google.com/file/d/1HcikPnTRusK_qXl9YxoR_cEv_fZqd9NS/view?usp=sharing
 - テーブル定義書：https://docs.google.com/spreadsheets/d/1K2gYfGHyMEdaslbT5frf2AbBsCDcYzSRMM8LSDhLkdM/edit?usp=sharing
 - 詳細設計：https://docs.google.com/spreadsheets/d/156O8mLF0jW5jmL2DXpt-BeoLhCpdFTr2Pa0xsezqqPc/edit?usp=sharing
+- AWS構成図：https://lucid.app/lucidchart/invitations/accept/inv_b791a3e5-2e95-490e-a1ec-3a3cc384223f?viewport_loc=-236%2C-36%2C2202%2C1116%2C0_0
+- インフラ設計書：https://docs.google.com/spreadsheets/d/1syerQ5mVt9yn7Npa5wkcRldPGgU9MiJkFHpTUWCqcZY/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1qqNYpHnviVhLLOvzCM26CGV5oaGPCTBdS-4AOGCXM-Q/edit?usp=sharing
@@ -44,4 +47,4 @@ https://docs.google.com/spreadsheets/d/1qqNYpHnviVhLLOvzCM26CGV5oaGPCTBdS-4AOGCX
 - IDE：Cloud9
 
 ## 使用素材
-- 未定
+- O-DAN:https://o-dan.net/ja/
