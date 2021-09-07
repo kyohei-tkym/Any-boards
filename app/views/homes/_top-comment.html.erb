@@ -10,6 +10,6 @@
   <% else %>
     <!--ログイン前に表示するボタン-->
     <div class="btn bgleft"><span><%= link_to "新規登録", new_user_registration_path, class:"sign_btn" %></span></div>
-    <div class="btn bgleft"><span><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"sign_btn" %></span></div>
+    <div class="btn bgleft"><span><%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post, class:"sign_btn" %></span></div>
   <% end %>
 </div>
