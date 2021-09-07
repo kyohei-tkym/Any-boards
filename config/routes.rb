@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   end
 
   get '/search' => 'search#search'
+
+  get '/rank' => 'ranks#rank'
 end

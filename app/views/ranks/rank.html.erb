@@ -1,0 +1,47 @@
+<div class="rank-container">
+  <h2 class="search-title">NICE! Ranking</h2>
+  <!--同率順位表示のための初期値-->
+  <% last_favorites = 0 %>
+  <% j = 1 %>
+  <!--値をlast_favoritesに保存-->
+  <% @post_favorite_ranks.each.with_index(1) do |post, i| %>
+    <div class="index-cantainer">
+      <h3>
+      <!--同率順位表示-->
+      <% if i == 1 %>
+        <% last_favorites = post.favorites.count %>
+      <% end %>
+      <!--last_favoritesとNICE数比べて同じなら同じ順位、違うなら次の順位表示-->
+      <% if post.favorites.count != last_favorites %>
+        <% j = i %>
+        No.<%= j %>
+        <p><%= post.favorites.count %>NICE!</p>
+        <% last_favorites = post.favorites.count %>
+      <% else %>
+        <% last_favorites = post.favorites.count %>
+        NO.<%= j %>
+        <p><%= post.favorites.count %>NICE!</p>
+      <% end %>
+      <!--/-->
+      </h3>
+      <div class="index-image">
+        <%= link_to post_path(post.id) do %>
+          <% post.post_images.first(1).each do |post_image| %>
+        　　<%= attachment_image_tag post_image, :image, size: "200x200" %>
+        　<% end %>
+        <% end %>
+      </div>
+
+      <div class="index-details">
+        <p class="index-text">ボードモデル：<%= post.title %></p>
+        <p class="index-text">ユーザー：<%= link_to post.user.name, user_path(post.user_id), class:"index-user" %></p>
+        <p class="index-text">ジャンル：<%= post.genre %></p>
+        <p class="index-text">コメント件数：<%= post.post_comments.count %></p>
+        <!--お気に入り機能-->
+        <div id="post-favorite_<%= post.id %>">
+          <%= render 'posts/post-favorite', post: post %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
