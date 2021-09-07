@@ -36,6 +36,10 @@
 <div class="post-btn">
   <div class="btn-show bgcentery"><span><%= link_to "POST", new_post_path, class:"sign_btn" %></span></div>
 </div>
+<!--ランキングへのリンクボタン-->
+<div class="post-btn">
+  <div class="btn-show bgcentery"><span><%= link_to "Ranking", rank_path, class:"sign_btn" %></span></div>
+</div>
 <!--投稿一覧-->
 <%= render 'post-index', posts: @posts %>
 
